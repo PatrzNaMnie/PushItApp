@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:vievmodels="clr-namespace:PushITapp.ViewModels"
+             x:Class="PushITapp.Views.PushUpsPage"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
+
+    <ContentPage.BindingContext>
+        <vievmodels:PushUpsViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition/>
+                <RowDefinition Height="80"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Text="{Binding _hashCode}"/>
+            <Frame BackgroundColor="#072227" Grid.Row ="1" HeightRequest="300" WidthRequest="300" CornerRadius="200" HorizontalOptions="Center" VerticalOptions="Center" Padding="3" >
+                <Frame Grid.Row ="1" HeightRequest="300" WidthRequest="300" CornerRadius="200" HorizontalOptions="Center" VerticalOptions="Center" Margin="0" Padding="0" BackgroundColor="White">
+                    <!--<Label Text="7" TextColor="Black" FontSize="60" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />-->
+                    <!--<Button Text="{Binding DailyPushUps}" TextColor="#072227" FontSize="60" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Transparent" HeightRequest="300" WidthRequest="300"/>-->
+                    <Entry Placeholder="{Binding DailyPushUps}" Text="{Binding EntryValue}" Keyboard="Numeric" TextColor="#072227" FontSize="60" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="Transparent" HeightRequest="300" WidthRequest="300">
+                        <Entry.Behaviors>
+                            <xct:UserStoppedTypingBehavior
+                                Command="{Binding AddCommand}"
+                                StoppedTypingTimeThreshold="1000"
+                                ShouldDismissKeyboardAutomatically="True"
+                                MinimumLengthThreshold="1"/>
+                        </Entry.Behaviors>
+                    </Entry>
+                </Frame>
+            </Frame>
+            <Button  Grid.Row="2" CornerRadius="20" WidthRequest="150" HeightRequest="50" BackgroundColor="#4FBDBA" VerticalOptions="Center" HorizontalOptions="Center">
+                <Button.Behaviors>
+                    <xct:EventToCommandBehavior 
+                        EventName="Clicked"
+                        Command="{Binding Clicked}"/>
+                </Button.Behaviors>
+            </Button>
+            <Label Text="{Binding _test}" Grid.Row="0"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
