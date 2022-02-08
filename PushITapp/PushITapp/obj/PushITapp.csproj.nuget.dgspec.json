@@ -66,6 +66,10 @@
               "target": "Package",
               "version": "[4.3.4, )"
             },
+            "Xam.Plugin.DeviceInfo": {
+              "target": "Package",
+              "version": "[4.1.1, )"
+            },
             "Xamarin.CommunityToolkit": {
               "target": "Package",
               "version": "[1.2.0, )"

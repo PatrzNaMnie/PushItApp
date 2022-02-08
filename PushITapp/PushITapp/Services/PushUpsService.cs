@@ -35,7 +35,7 @@ namespace PushITapp.Services
 
         public static async Task<List<PushUp>> GetPushUps()
         {
-            var json = client.GetStringAsync("api/users").Result;
+            var json = client.GetStringAsync("api/pushups").Result;
             var pushUps = JsonConvert.DeserializeObject<List<PushUp>>(json);
             return pushUps;
 

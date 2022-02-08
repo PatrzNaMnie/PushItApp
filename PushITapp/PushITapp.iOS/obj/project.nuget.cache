@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "D0Sz+42hCZgdL4Yk5Sfxa3RPuB0kGsVy+KyTl4zKzZ/1EXzU2yzNKbgMpKuIaO7bjL10cDvpEgNH8P4D996mYw==",
+  "dgSpecHash": "iuElRUfq+H/M7lkhHxlDpw2G8bYnKIrB6HCxKF05gZ2t4Llqt6iZIy/RpEt1c14emJZn2uT+suYDP59r+fyICA==",
   "success": true,
   "projectFilePath": "C:\\Wojciechowski\\-- MOJE --\\Programowanie\\PushITapp\\PushITapp\\PushITapp\\PushITapp.iOS\\PushITapp.iOS.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Users\\kwojciechowski\\.nuget\\packages\\system.net.http\\4.3.4\\system.net.http.4.3.4.nupkg.sha512",
     "C:\\Users\\kwojciechowski\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\kwojciechowski\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
+    "C:\\Users\\kwojciechowski\\.nuget\\packages\\xam.plugin.deviceinfo\\4.1.1\\xam.plugin.deviceinfo.4.1.1.nupkg.sha512",
     "C:\\Users\\kwojciechowski\\.nuget\\packages\\xamarin.communitytoolkit\\1.2.0\\xamarin.communitytoolkit.1.2.0.nupkg.sha512",
     "C:\\Users\\kwojciechowski\\.nuget\\packages\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
     "C:\\Users\\kwojciechowski\\.nuget\\packages\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512"

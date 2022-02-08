@@ -67,3 +67,4 @@ C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITap
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp.iOS\bin\iPhone\Debug\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp.iOS\bin\iPhone\Debug\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp.iOS\bin\iPhone\Debug\Newtonsoft.Json.dll
+C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp.iOS\bin\iPhone\Debug\System.Net.Http.dll

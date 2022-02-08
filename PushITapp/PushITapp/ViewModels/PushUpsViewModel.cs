@@ -16,36 +16,32 @@ namespace PushITapp.ViewModels
     {
         public AsyncCommand<object> AddCommand { get; }
 
-        public AsyncCommand Clicked;
+        public AsyncCommand<Task> Switch;
 
         public string _hashCode;
 
         PushUpsData pushUpsData;
-        //HashCode hashCode = new HashCode();
 
         public string _entryValue;
 
         public int dailyPushUps;
 
-        public int _test;
+        private bool proportional;
+
 
         private CancellationTokenSource _tokenSource;
         public PushUpsViewModel()
         {
 
-            //hashCode = new HashCode();
-
-            //_hashCode = hashCode.GetHashCode();
-            //PushUpsService.GetPushUps(1).Result
             pushUpsData = new PushUpsData(PushUpsService.GetPushUps(UsersService.GetUser(Services.HashCode.GetHashCode()).Result).Result);
 
-            dailyPushUps = pushUpsData.GetCorrectAmount();
+            DailyPushUps = pushUpsData.GetCorrectAmount();
 
             AddCommand = new AsyncCommand<object>(AddPushUps);
 
-            Clicked = new AsyncCommand(Click);
+            HashCode = Services.HashCode.GetHashCode();
 
-            HashCode = UsersService.GetUsers().Result.ToList().LastOrDefault().HashCode;
+            Switch = new AsyncCommand<Task>(switchToProportional);
 
         }
 
@@ -82,7 +78,12 @@ namespace PushITapp.ViewModels
 
                 var value = Int32.Parse(_entryValue);
                 pushUpsData.AddPushUps(value, Services.HashCode.GetHashCode());
-                DailyPushUps = pushUpsData.GetCorrectAmount();
+
+                if(proportional == true)
+                    DailyPushUps = pushUpsData.Proportional();
+                else
+                    DailyPushUps = pushUpsData.GetCorrectAmount();
+
                 EntryValue = "";
             }
 
@@ -94,20 +95,25 @@ namespace PushITapp.ViewModels
             var value = (int)sender;
             pushUpsData.AddPushUps(value, Services.HashCode.GetHashCode());
             dailyPushUps = pushUpsData.GetCorrectAmount();
-            
+
         }
 
-
-
-        async Task Click()
+        public async Task switchToProportional(object sender)
         {
-            Test = await PushUpsService.GetPushUps(1);
-        }
 
-        public int Test
-        {
-            get => _test;
-            set => SetProperty(ref _test, value);
+            if (proportional == true)
+            {
+                proportional = false;
+
+                DailyPushUps = pushUpsData.GetCorrectAmount();
+            }
+
+            proportional = true;
+
+            if (proportional == true)
+            {
+                DailyPushUps = pushUpsData.Proportional();
+            }
         }
     }
 }

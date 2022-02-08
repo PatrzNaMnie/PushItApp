@@ -42,17 +42,22 @@ namespace PushITapp.Services
 
         }
 
+
         public static async Task<int> GetUser(string hashCode)
         {
-            var user = client.GetStringAsync($"api/users/{hashCode}").Result;
-            var result = JsonConvert.DeserializeObject<int>(user);
-            return result;
-        }
+            try
+            {
+                var user = client.GetStringAsync($"api/users/{hashCode}").Result;
+                var result = JsonConvert.DeserializeObject<int>(user);
+                return result;
+            }
+            catch (Exception)
+            {
 
-        //static async Task<T> GetAsync<T>(string url, string key, int mins = 1, bool forceRefresh = false)
-        //{
-          
-        //}
+                return 0;
+            }
+            
+        }
 
         public static async Task AddUser()
         {

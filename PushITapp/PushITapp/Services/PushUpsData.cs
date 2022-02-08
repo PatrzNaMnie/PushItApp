@@ -12,7 +12,6 @@ namespace PushITapp.Services
         private int pushUpsCompleted;
         public PushUpsData(int pushUpsCompleted)
         {
-            //pushUpsCompleted = 256;
             this.pushUpsCompleted = pushUpsCompleted;
         }
 

@@ -84,6 +84,15 @@
           "lib/xamarinios10/_._": {}
         }
       },
+      "Xam.Plugin.DeviceInfo/4.1.1": {
+        "type": "package",
+        "compile": {
+          "lib/xamarinios10/Plugin.DeviceInfo.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Plugin.DeviceInfo.dll": {}
+        }
+      },
       "Xamarin.CommunityToolkit/1.2.0": {
         "type": "package",
         "dependencies": {
@@ -250,6 +259,7 @@
           "Newtonsoft.Json": "13.0.1",
           "Refractored.MvvmHelpers": "1.6.2",
           "System.Net.Http": "4.3.4",
+          "Xam.Plugin.DeviceInfo": "4.1.1",
           "Xamarin.CommunityToolkit": "1.2.0",
           "Xamarin.Essentials": "1.6.1",
           "Xamarin.Forms": "5.0.0.2012"
@@ -335,6 +345,15 @@
           "lib/xamarinios10/_._": {}
         }
       },
+      "Xam.Plugin.DeviceInfo/4.1.1": {
+        "type": "package",
+        "compile": {
+          "lib/xamarinios10/Plugin.DeviceInfo.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Plugin.DeviceInfo.dll": {}
+        }
+      },
       "Xamarin.CommunityToolkit/1.2.0": {
         "type": "package",
         "dependencies": {
@@ -501,6 +520,7 @@
           "Newtonsoft.Json": "13.0.1",
           "Refractored.MvvmHelpers": "1.6.2",
           "System.Net.Http": "4.3.4",
+          "Xam.Plugin.DeviceInfo": "4.1.1",
           "Xamarin.CommunityToolkit": "1.2.0",
           "Xamarin.Essentials": "1.6.1",
           "Xamarin.Forms": "5.0.0.2012"
@@ -586,6 +606,15 @@
           "lib/xamarinios10/_._": {}
         }
       },
+      "Xam.Plugin.DeviceInfo/4.1.1": {
+        "type": "package",
+        "compile": {
+          "lib/xamarinios10/Plugin.DeviceInfo.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Plugin.DeviceInfo.dll": {}
+        }
+      },
       "Xamarin.CommunityToolkit/1.2.0": {
         "type": "package",
         "dependencies": {
@@ -752,6 +781,7 @@
           "Newtonsoft.Json": "13.0.1",
           "Refractored.MvvmHelpers": "1.6.2",
           "System.Net.Http": "4.3.4",
+          "Xam.Plugin.DeviceInfo": "4.1.1",
           "Xamarin.CommunityToolkit": "1.2.0",
           "Xamarin.Essentials": "1.6.1",
           "Xamarin.Forms": "5.0.0.2012"
@@ -837,6 +867,15 @@
           "lib/xamarinios10/_._": {}
         }
       },
+      "Xam.Plugin.DeviceInfo/4.1.1": {
+        "type": "package",
+        "compile": {
+          "lib/xamarinios10/Plugin.DeviceInfo.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Plugin.DeviceInfo.dll": {}
+        }
+      },
       "Xamarin.CommunityToolkit/1.2.0": {
         "type": "package",
         "dependencies": {
@@ -1003,6 +1042,7 @@
           "Newtonsoft.Json": "13.0.1",
           "Refractored.MvvmHelpers": "1.6.2",
           "System.Net.Http": "4.3.4",
+          "Xam.Plugin.DeviceInfo": "4.1.1",
           "Xamarin.CommunityToolkit": "1.2.0",
           "Xamarin.Essentials": "1.6.1",
           "Xamarin.Forms": "5.0.0.2012"
@@ -1234,6 +1274,39 @@
         "system.valuetuple.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "Xam.Plugin.DeviceInfo/4.1.1": {
+      "sha512": "tBoWE60pwlUDK9f+X3CeFBVTpU+OuMel8Hfp7bxYnJKiGGQ2I3S+8ZF1lJSxvlQf0o8C/IjGnddUeDqwBmWZfg==",
+      "type": "package",
+      "path": "xam.plugin.deviceinfo/4.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid71/Plugin.DeviceInfo.dll",
+        "lib/monoandroid71/Plugin.DeviceInfo.pdb",
+        "lib/net45/Plugin.DeviceInfo.dll",
+        "lib/net45/Plugin.DeviceInfo.pdb",
+        "lib/netstandard1.0/Plugin.DeviceInfo.dll",
+        "lib/netstandard1.0/Plugin.DeviceInfo.pdb",
+        "lib/netstandard2.0/Plugin.DeviceInfo.dll",
+        "lib/netstandard2.0/Plugin.DeviceInfo.pdb",
+        "lib/tizen40/Plugin.DeviceInfo.dll",
+        "lib/tizen40/Plugin.DeviceInfo.pdb",
+        "lib/uap10.0.16299/Plugin.DeviceInfo.dll",
+        "lib/uap10.0.16299/Plugin.DeviceInfo.pdb",
+        "lib/uap10.0.16299/Plugin.DeviceInfo.pri",
+        "lib/xamarinios10/Plugin.DeviceInfo.dll",
+        "lib/xamarinios10/Plugin.DeviceInfo.pdb",
+        "lib/xamarinmac20/Plugin.DeviceInfo.dll",
+        "lib/xamarinmac20/Plugin.DeviceInfo.pdb",
+        "lib/xamarintvos10/Plugin.DeviceInfo.dll",
+        "lib/xamarintvos10/Plugin.DeviceInfo.pdb",
+        "lib/xamarinwatchos10/Plugin.DeviceInfo.dll",
+        "lib/xamarinwatchos10/Plugin.DeviceInfo.pdb",
+        "readme.txt",
+        "xam.plugin.deviceinfo.4.1.1.nupkg.sha512",
+        "xam.plugin.deviceinfo.nuspec"
       ]
     },
     "Xamarin.CommunityToolkit/1.2.0": {
@@ -1555,6 +1628,7 @@
     "Xamarin.iOS,Version=v1.0": [
       "PushITapp >= 1.0.0",
       "Refractored.MvvmHelpers >= 1.6.2",
+      "Xam.Plugin.DeviceInfo >= 4.1.1",
       "Xamarin.CommunityToolkit >= 1.2.0",
       "Xamarin.Essentials >= 1.6.1",
       "Xamarin.Forms >= 5.0.0.2012"
@@ -1605,6 +1679,10 @@
           "Refractored.MvvmHelpers": {
             "target": "Package",
             "version": "[1.6.2, )"
+          },
+          "Xam.Plugin.DeviceInfo": {
+            "target": "Package",
+            "version": "[4.1.1, )"
           },
           "Xamarin.CommunityToolkit": {
             "target": "Package",

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8ACPwhAJLPIS8fpMOVb8BOaQEqB3ABv6WS1u8Aeti76XFaMGkDZy2iT4tbQG3r/LVFyIj3itQIIO/w8g+eHn4w==",
+  "dgSpecHash": "smX4yyDEmYETyMy4AwQF08m+DuCEAcW3HL6Waq2FeT8SC9vzaH0E6Vt7+HkvXwcxaYTJeffHugzeooINl83BRQ==",
   "success": true,
   "projectFilePath": "C:\\Wojciechowski\\-- MOJE --\\Programowanie\\PushITapp\\PushITapp\\PushITapp\\PushITapp\\PushITapp.csproj",
   "expectedPackageFiles": [
@@ -64,6 +64,7 @@
     "C:\\Users\\kwojciechowski\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\kwojciechowski\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\kwojciechowski\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
+    "C:\\Users\\kwojciechowski\\.nuget\\packages\\xam.plugin.deviceinfo\\4.1.1\\xam.plugin.deviceinfo.4.1.1.nupkg.sha512",
     "C:\\Users\\kwojciechowski\\.nuget\\packages\\xamarin.communitytoolkit\\1.2.0\\xamarin.communitytoolkit.1.2.0.nupkg.sha512",
     "C:\\Users\\kwojciechowski\\.nuget\\packages\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
     "C:\\Users\\kwojciechowski\\.nuget\\packages\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512"

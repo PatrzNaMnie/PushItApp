@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PushITapp.Android", "PushIT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PushITapp.iOS", "PushITapp\PushITapp.iOS\PushITapp.iOS.csproj", "{BD8E4DD3-4BD9-4B47-8410-11FF65C6D94A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PushITapp", "PushITapp\PushITapp\PushITapp.csproj", "{F9449296-436F-4AD4-A182-2D1F3F68657C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PushITapp", "PushITapp\PushITapp\PushITapp.csproj", "{F9449296-436F-4AD4-A182-2D1F3F68657C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

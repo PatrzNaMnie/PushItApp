@@ -8,6 +8,8 @@ public class MonoPackageManager_Resources {
 		"Microsoft.AspNetCore.Cryptography.KeyDerivation.dll",
 		"MvvmHelpers.dll",
 		"Newtonsoft.Json.dll",
+		"Plugin.CurrentActivity.dll",
+		"Plugin.DeviceInfo.dll",
 		"PushITapp.dll",
 		"Xamarin.AndroidX.Activity.dll",
 		"Xamarin.AndroidX.Annotation.dll",
