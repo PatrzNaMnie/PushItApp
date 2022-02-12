@@ -13,11 +13,12 @@ namespace PushITapp
         public AppShell()
         {
             InitializeComponent();
-            //var user = UsersService.GetUser(HashCode.GetHashCode()).Result;
+
             AddUser();
             AddPushUp();
-            Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
-            Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
+
+            //Routing.RegisterRoute(nameof(PushUpsPage), typeof(PushUpsPage));
+            //Routing.RegisterRoute(nameof(StatisticsPage), typeof(StatisticsPage));
         }
 
         /// <summary>

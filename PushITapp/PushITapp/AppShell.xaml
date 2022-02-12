@@ -31,16 +31,14 @@
 
     <TabBar>
         <ShellContent Title="PushUps" Icon="icon_about.png" Route="PushUpsPage" ContentTemplate="{DataTemplate local:PushUpsPage}"/>
-        <ShellContent Title="Statistics" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:ItemsPage}" />
+        <ShellContent Title="Statistics" Icon="icon_feed.png" Route="StatisticsPage" ContentTemplate="{DataTemplate local:StatisticsPage}" />
     </TabBar>
 
     <!--
         If you would like to navigate to this content you can do so by calling
         await Shell.Current.GoToAsync("//LoginPage");
     -->
-    <TabBar>
-        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
-    </TabBar>
+
 
 
 </Shell>

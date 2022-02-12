@@ -67,6 +67,33 @@ namespace PushITapp.Services
             pushUpsCompleted = PushUpsService.GetPushUps(UsersService.GetUser(hashCode).Result).Result;
         }
 
+        public float GetPrcOfPushUps()
+        {
+            return pushUpsCompleted * 100 / NumOfPushUps();
+        }
+
+        public int GetCompletedDays()
+        {
+
+            Calendar calendar = new GregorianCalendar();
+            int pushUps = 0;
+            int days = 0;
+
+            for (days = 1; days <= calendar.GetDaysInYear(DateTime.Now.Year); days++)
+            {
+                pushUps = pushUps + days;
+
+                if(pushUps > pushUpsCompleted)
+                {
+                    break;
+                    
+                }
+            }
+
+            return days;
+
+        }
+
         //public static int MinPushToCatchUp(int pushUpsCompleted)
         //{
         //    GetCorrectAmount(pushUpsCompleted)

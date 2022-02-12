@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodel="clr-namespace:PushITapp.ViewModels" 
+             xmlns:microcharts="clr-namespace:Microcharts;assembly=Microcharts" 
+             xmlns:control="clr-namespace:ProgressRingControl.Forms.Plugin;assembly=ProgressRing.Forms.Plugin"
+             x:Class="PushITapp.Views.StatisticsPage"
+            xmlns:Charts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms">
+    <ContentPage.BindingContext>
+        <viewmodel:StatisticsViewModel/>
+    </ContentPage.BindingContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="200"/>
+        </Grid.RowDefinitions>
+
+        <Charts:ChartView Chart="{Binding ChartofPushUps}"
+                          HeightRequest="100"
+                          VerticalOptions="Fill"
+                          HorizontalOptions="Fill" Grid.Row="2" Grid.Column="1"/>
+
+
+        <Charts:ChartView Chart="{Binding ChartofDays}"
+                          HeightRequest="100"
+                          VerticalOptions="Fill"
+                          HorizontalOptions="Fill" Grid.Row="2" Grid.Column="0"/>
+
+        <!--<control:ProgressRing RingThickness="10" Progress="0.2" Grid.Row="2" Grid.Column="0" RingBaseColor="LightGray" ProgressColor="#FF5959"/>
+        <control:ProgressRing RingThickness="10" Progress="0.1" Grid.Row="2" Grid.Column="1" RingBaseColor="LightGray" ProgressColor="#A659FF"/>-->
+
+    </Grid>
+    
+</ContentPage>

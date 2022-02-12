@@ -6,11 +6,6 @@ C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITap
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp\obj\Debug\netstandard2.0\PushITapp.GeneratedMSBuildEditorConfig.editorconfig
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp\obj\Debug\netstandard2.0\AppShell.xaml.g.cs
-C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp\obj\Debug\netstandard2.0\Views\AboutPage.xaml.g.cs
-C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp\obj\Debug\netstandard2.0\Views\ItemDetailPage.xaml.g.cs
-C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp\obj\Debug\netstandard2.0\Views\ItemsPage.xaml.g.cs
-C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp\obj\Debug\netstandard2.0\Views\LoginPage.xaml.g.cs
-C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp\obj\Debug\netstandard2.0\Views\NewItemPage.xaml.g.cs
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp\obj\Debug\netstandard2.0\PushITapp.AssemblyInfoInputs.cache
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp\obj\Debug\netstandard2.0\PushITapp.AssemblyInfo.cs
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp\obj\Debug\netstandard2.0\PushITapp.csproj.CoreCompileInputs.cache
@@ -19,3 +14,4 @@ C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITap
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp\obj\Debug\netstandard2.0\ref\PushITapp.dll
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp\obj\Debug\netstandard2.0\PushITapp.pdb
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp\obj\Debug\netstandard2.0\Views\PushUpsPage.xaml.g.cs
+C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp\obj\Debug\netstandard2.0\Views\StatisticsPage.xaml.g.cs

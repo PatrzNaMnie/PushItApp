@@ -1,8 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:vievmodels="clr-namespace:PushITapp.ViewModels"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:vievmodels="clr-namespace:PushITapp.ViewModels"
              x:Class="PushITapp.Views.PushUpsPage"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Name="pageName"
+             >
 
     <ContentPage.BindingContext>
         <vievmodels:PushUpsViewModel/>
@@ -11,12 +14,16 @@
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="20"/>
-                <RowDefinition/>
-                <RowDefinition Height="80"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="300"/>
+                <RowDefinition Height="100"/>
             </Grid.RowDefinitions>
 
             <Label Grid.Row="0" Text="{Binding HashCode}" TextColor="LightGray"/>
+            
+            <Frame Grid.Row="0" HeightRequest="20" WidthRequest="200" BorderColor="#041562" HorizontalOptions="Center" VerticalOptions="Center" CornerRadius="20">
+                <Label Text="Proportional" TextColor="#041562" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20"/>
+            </Frame>
             <Frame BackgroundColor="#041562" Grid.Row ="1" HeightRequest="250" WidthRequest="250" CornerRadius="200" HorizontalOptions="Center" VerticalOptions="Center" Padding="3" >
                 <Frame Grid.Row ="1" HeightRequest="250" WidthRequest="250" CornerRadius="200" HorizontalOptions="Center" VerticalOptions="Center" Margin="0" Padding="0" BackgroundColor="White">
                     <Entry  Placeholder="{Binding DailyPushUps}" PlaceholderColor="LightGray" Text="{Binding EntryValue}" Keyboard="Numeric" TextColor="#072227" FontSize="60" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="Transparent" HeightRequest="200" WidthRequest="200">
@@ -30,13 +37,7 @@
                     </Entry>
                 </Frame>
             </Frame>
-            <Button Grid.Row="2" CornerRadius="20" WidthRequest="150" HeightRequest="50" BackgroundColor="#FF5959" VerticalOptions="Center" HorizontalOptions="Center">
-                <Button.Behaviors>
-                    <xct:EventToCommandBehavior
-                        EventName="Clicked"
-                        Command="{Binding Switch}"/>
-                </Button.Behaviors>
-            </Button>
+            <Button Command="{Binding Switch}"  Grid.Row="2" CornerRadius="20" WidthRequest="150" HeightRequest="50" BackgroundColor="#FF5959" VerticalOptions="Center" HorizontalOptions="Center"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

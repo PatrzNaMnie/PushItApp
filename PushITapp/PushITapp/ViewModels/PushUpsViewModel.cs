@@ -16,7 +16,7 @@ namespace PushITapp.ViewModels
     {
         public AsyncCommand<object> AddCommand { get; }
 
-        public AsyncCommand<Task> Switch;
+        public AsyncCommand<object> Switch { get; }
 
         public string _hashCode;
 
@@ -33,15 +33,15 @@ namespace PushITapp.ViewModels
         public PushUpsViewModel()
         {
 
-            pushUpsData = new PushUpsData(PushUpsService.GetPushUps(UsersService.GetUser(Services.HashCode.GetHashCode()).Result).Result);
-
-            DailyPushUps = pushUpsData.GetCorrectAmount();
-
             AddCommand = new AsyncCommand<object>(AddPushUps);
 
             HashCode = Services.HashCode.GetHashCode();
 
-            Switch = new AsyncCommand<Task>(switchToProportional);
+            pushUpsData = new PushUpsData(PushUpsService.GetPushUps(UsersService.GetUser(HashCode).Result).Result);
+
+            DailyPushUps = pushUpsData.GetCorrectAmount();
+
+            Switch = new AsyncCommand<object>(switchToProportional);
 
         }
 
@@ -106,14 +106,19 @@ namespace PushITapp.ViewModels
                 proportional = false;
 
                 DailyPushUps = pushUpsData.GetCorrectAmount();
+
             }
-
-            proportional = true;
-
-            if (proportional == true)
+            else
             {
-                DailyPushUps = pushUpsData.Proportional();
+                proportional = true;
+
+                if (proportional == true)
+                {
+                    DailyPushUps = pushUpsData.Proportional();
+                }
+
             }
+            
         }
     }
 }
