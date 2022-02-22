@@ -28,6 +28,8 @@ namespace PushITapp.ViewModels
 
         private bool proportional;
 
+        public int correctAmount;
+
 
         private CancellationTokenSource _tokenSource;
         public PushUpsViewModel()
@@ -39,9 +41,13 @@ namespace PushITapp.ViewModels
 
             pushUpsData = new PushUpsData(PushUpsService.GetPushUps(UsersService.GetUser(HashCode).Result).Result);
 
-            DailyPushUps = pushUpsData.GetCorrectAmount();
+            CorrectAmout = pushUpsData.GetCorrectAmount();
 
             Switch = new AsyncCommand<object>(switchToProportional);
+
+            DailyPushUps = pushUpsData.DailyPushUps();
+
+
 
         }
 
@@ -63,6 +69,12 @@ namespace PushITapp.ViewModels
             set => SetProperty(ref _entryValue, value);
         }
 
+        public int CorrectAmout
+        {
+            get => correctAmount;
+            set => SetProperty(ref correctAmount, value);
+        }
+
         async Task AddPushUps(object entryValue)
         {
             var _entryValue = (string)entryValue;
@@ -82,7 +94,7 @@ namespace PushITapp.ViewModels
                 if(proportional == true)
                     DailyPushUps = pushUpsData.Proportional();
                 else
-                    DailyPushUps = pushUpsData.GetCorrectAmount();
+                    CorrectAmout = pushUpsData.GetCorrectAmount();
 
                 EntryValue = "";
             }
@@ -94,10 +106,11 @@ namespace PushITapp.ViewModels
         {
             var value = (int)sender;
             pushUpsData.AddPushUps(value, Services.HashCode.GetHashCode());
-            dailyPushUps = pushUpsData.GetCorrectAmount();
+            CorrectAmout = pushUpsData.GetCorrectAmount();
 
         }
 
+        // Mode switch Proportional/DayByDay
         public async Task switchToProportional(object sender)
         {
 
@@ -105,8 +118,8 @@ namespace PushITapp.ViewModels
             {
                 proportional = false;
 
-                DailyPushUps = pushUpsData.GetCorrectAmount();
-
+                CorrectAmout = pushUpsData.GetCorrectAmount();
+                DailyPushUps = pushUpsData.DailyPushUps();
             }
             else
             {

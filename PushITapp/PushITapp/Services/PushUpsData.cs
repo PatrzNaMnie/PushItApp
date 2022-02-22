@@ -15,6 +15,7 @@ namespace PushITapp.Services
             this.pushUpsCompleted = pushUpsCompleted;
         }
 
+        // Total numer of push ups
         public int NumOfPushUps()
         {
 
@@ -29,11 +30,13 @@ namespace PushITapp.Services
             return pushUps;
         }
 
+        // Difference betweend completed push ups and total push ups 
         public int PushUpsToEnd()
         {
             return NumOfPushUps() - pushUpsCompleted;
         }
 
+        // Count proportional num of push ups for same value on each day
         public int Proportional()
         {
             Calendar calendar = new GregorianCalendar();
@@ -42,12 +45,15 @@ namespace PushITapp.Services
             return PushUpsToEnd() / (calendar.GetDaysInYear(DateTime.Now.Year) - calendar.GetDayOfYear(DateTime.Now));
         }
 
+        // Get day of year - number of push ups to do
         public int DailyPushUps()
         {
             Calendar calendar = new GregorianCalendar();
             return calendar.GetDayOfYear(DateTime.Now);
         }
 
+        // Show difference between number of pushups to do and completed pushups 
+        // It helps to see how much push ups you need to do to complete day task
         public int GetCorrectAmount()
         {
             Calendar calendar = new GregorianCalendar();
@@ -58,20 +64,28 @@ namespace PushITapp.Services
                 pushUps = pushUps + i;
             }
 
-            return pushUps - pushUpsCompleted;
+            if (pushUps - pushUpsCompleted < 0)
+                return 0;
+            else
+                return pushUps - pushUpsCompleted;
         }
 
+        // Add push ups
         public void AddPushUps(int pushUps, string hashCode)
         {
             PushUpsService.PutPushUps(UsersService.GetUser(hashCode).Result, pushUps);
+            HistoricalService.AddHistorical(pushUps, DateTime.Now);
             pushUpsCompleted = PushUpsService.GetPushUps(UsersService.GetUser(hashCode).Result).Result;
         }
 
+
+        // Percentage completed push ups in total num of push ups 
         public float GetPrcOfPushUps()
         {
             return pushUpsCompleted * 100 / NumOfPushUps();
         }
 
+        // Count how many days you complete by checking number of completed push ups
         public int GetCompletedDays()
         {
 
@@ -90,9 +104,11 @@ namespace PushITapp.Services
                 }
             }
 
-            return days;
+            return days - 1;
 
         }
+
+
 
         //public static int MinPushToCatchUp(int pushUpsCompleted)
         //{

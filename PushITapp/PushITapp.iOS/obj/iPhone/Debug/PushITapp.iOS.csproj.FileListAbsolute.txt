@@ -70,3 +70,11 @@ C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITap
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp.iOS\bin\iPhone\Debug\System.Net.Http.dll
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp.iOS\bin\iPhone\Debug\Plugin.DeviceInfo.dll
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp.iOS\bin\iPhone\Debug\Plugin.DeviceInfo.pdb
+C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp.iOS\bin\iPhone\Debug\Microcharts.dll
+C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp.iOS\bin\iPhone\Debug\Microcharts.iOS.dll
+C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp.iOS\bin\iPhone\Debug\Microcharts.Forms.dll
+C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp.iOS\bin\iPhone\Debug\SkiaSharp.dll
+C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp.iOS\bin\iPhone\Debug\SkiaSharp.Views.iOS.dll
+C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp.iOS\bin\iPhone\Debug\SkiaSharp.Views.Forms.dll
+C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp.iOS\bin\iPhone\Debug\ProgressRing.Forms.Plugin.dll
+C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp.iOS\bin\iPhone\Debug\ProgressRing.Forms.Plugin.iOS.dll
