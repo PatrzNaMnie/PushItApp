@@ -41,15 +41,15 @@ namespace PushITapp.Services
         }
 
 
-        public static async Task<IEnumerable<Historical>> GetHistoricalByUserId(int UserId)
+        public static async Task<List<Historical>> GetHistoricalByUserId(int UserId)
         {
             var historical = client.GetStringAsync($"api/historical/{UserId}").Result;
-            var result = JsonConvert.DeserializeObject<IEnumerable<Historical>>(historical);
+            var result = JsonConvert.DeserializeObject<List<Historical>>(historical);
 
             return result;
         }
 
-        public static async Task<List<Historical>> GetHistoricalByUserIdAndDate(int UserId, DateTime Date)
+        public static async Task<List<Historical>> GetHistoricalByUserIdAndDate(int UserId, string Date)
         {
             var historical = client.GetStringAsync($"api/historical/{UserId}/{Date}").Result;
             var result = JsonConvert.DeserializeObject<List<Historical>>(historical);

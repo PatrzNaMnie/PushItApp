@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "l9eHLpBRrXQ0t2hVunbZxozq9YGBYfjyGSJzCQcyhBrumWE++zVDwhho4cw07+9SMI8SShSwmeBfrjQ3CF6J6Q==",
+  "dgSpecHash": "bdkzxlZfS5s9QM7bufGE4G3AdLz4W8dVqSAurpLNKyCGeptCP+eWZKLve2TzD4JeWnElHgQOc2iWYrgrbVRCMA==",
   "success": true,
   "projectFilePath": "C:\\Wojciechowski\\-- MOJE --\\Programowanie\\PushITapp\\PushITapp\\PushITapp\\PushITapp\\PushITapp.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\kwojciechowski\\.nuget\\packages\\devexpress.xamarinforms.charts\\21.2.5\\devexpress.xamarinforms.charts.21.2.5.nupkg.sha512",
+    "C:\\Users\\kwojciechowski\\.nuget\\packages\\devexpress.xamarinforms.core\\21.2.5\\devexpress.xamarinforms.core.21.2.5.nupkg.sha512",
     "C:\\Users\\kwojciechowski\\.nuget\\packages\\microcharts\\0.9.5.9\\microcharts.0.9.5.9.nupkg.sha512",
     "C:\\Users\\kwojciechowski\\.nuget\\packages\\microcharts.forms\\0.9.5.9\\microcharts.forms.0.9.5.9.nupkg.sha512",
     "C:\\Users\\kwojciechowski\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.1\\microsoft.aspnetcore.cryptography.internal.6.0.1.nupkg.sha512",

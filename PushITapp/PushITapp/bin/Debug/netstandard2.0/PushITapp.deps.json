@@ -9,6 +9,7 @@
     ".NETStandard,Version=v2.0/": {
       "PushITapp/1.0.0": {
         "dependencies": {
+          "DevExpress.XamarinForms.Charts": "21.2.5",
           "Microcharts": "0.9.5.9",
           "Microcharts.Forms": "0.9.5.9",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "6.0.1",
@@ -24,6 +25,29 @@
         },
         "runtime": {
           "PushITapp.dll": {}
+        }
+      },
+      "DevExpress.XamarinForms.Charts/21.2.5": {
+        "dependencies": {
+          "DevExpress.XamarinForms.Core": "21.2.5",
+          "Xamarin.Forms": "5.0.0.2012"
+        },
+        "runtime": {
+          "lib/netstandard2.0/DevExpress.XamarinForms.Charts.dll": {
+            "assemblyVersion": "21.2.5.0",
+            "fileVersion": "21.2.5.0"
+          }
+        }
+      },
+      "DevExpress.XamarinForms.Core/21.2.5": {
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2012"
+        },
+        "runtime": {
+          "lib/netstandard2.0/DevExpress.XamarinForms.Core.dll": {
+            "assemblyVersion": "21.2.5.0",
+            "fileVersion": "21.2.5.0"
+          }
         }
       },
       "Microcharts/0.9.5.9": {
@@ -691,6 +715,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "DevExpress.XamarinForms.Charts/21.2.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-F9QJsDjWAb2QigTNOHpTTdDBS25iRCllB/WvCQu/M1gPyqzXkz2TKWTYHQELatG/s/z0/6CfeT3DIvVoxbuyzQ==",
+      "path": "devexpress.xamarinforms.charts/21.2.5",
+      "hashPath": "devexpress.xamarinforms.charts.21.2.5.nupkg.sha512"
+    },
+    "DevExpress.XamarinForms.Core/21.2.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bHfy6zFCj5T0Pw/Jh4ySXrq9+VuUyJVrxgRGQMVH/FvvLip/wsvY+7BgttM9z31pMGktmM3qN1y7Swabh76K/w==",
+      "path": "devexpress.xamarinforms.core/21.2.5",
+      "hashPath": "devexpress.xamarinforms.core.21.2.5.nupkg.sha512"
     },
     "Microcharts/0.9.5.9": {
       "type": "package",

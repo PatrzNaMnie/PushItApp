@@ -2,6 +2,37 @@
   "version": 3,
   "targets": {
     "MonoAndroid,Version=v11.0": {
+      "DevExpress.XamarinForms.Charts/21.2.5": {
+        "type": "package",
+        "dependencies": {
+          "DevExpress.XamarinForms.Core": "[21.2.5]",
+          "Xamarin.Forms": "5.0.0.2012"
+        },
+        "compile": {
+          "lib/MonoAndroid10/DevExpress.Xamarin.Android.Charts.dll": {},
+          "lib/MonoAndroid10/DevExpress.XamarinForms.Charts.Android.dll": {},
+          "lib/MonoAndroid10/DevExpress.XamarinForms.Charts.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/DevExpress.Xamarin.Android.Charts.dll": {},
+          "lib/MonoAndroid10/DevExpress.XamarinForms.Charts.Android.dll": {},
+          "lib/MonoAndroid10/DevExpress.XamarinForms.Charts.dll": {}
+        }
+      },
+      "DevExpress.XamarinForms.Core/21.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2012"
+        },
+        "compile": {
+          "lib/MonoAndroid10/DevExpress.XamarinForms.Core.Android.dll": {},
+          "lib/MonoAndroid10/DevExpress.XamarinForms.Core.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/DevExpress.XamarinForms.Core.Android.dll": {},
+          "lib/MonoAndroid10/DevExpress.XamarinForms.Core.dll": {}
+        }
+      },
       "Microcharts/0.9.5.9": {
         "type": "package",
         "dependencies": {
@@ -1196,6 +1227,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "DevExpress.XamarinForms.Charts": "21.2.5",
           "Microcharts": "0.9.5.9",
           "Microcharts.Forms": "0.9.5.9",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "6.0.1",
@@ -1218,6 +1250,46 @@
     }
   },
   "libraries": {
+    "DevExpress.XamarinForms.Charts/21.2.5": {
+      "sha512": "F9QJsDjWAb2QigTNOHpTTdDBS25iRCllB/WvCQu/M1gPyqzXkz2TKWTYHQELatG/s/z0/6CfeT3DIvVoxbuyzQ==",
+      "type": "package",
+      "path": "devexpress.xamarinforms.charts/21.2.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "devexpress.xamarinforms.charts.21.2.5.nupkg.sha512",
+        "devexpress.xamarinforms.charts.nuspec",
+        "lib/MonoAndroid10/DevExpress.Xamarin.Android.Charts.dll",
+        "lib/MonoAndroid10/DevExpress.XamarinForms.Charts.Android.dll",
+        "lib/MonoAndroid10/DevExpress.XamarinForms.Charts.dll",
+        "lib/MonoAndroid10/DevExpress.XamarinForms.Charts.xml",
+        "lib/Xamarin.iOS10/DevExpress.Xamarin.iOS.Charts.dll",
+        "lib/Xamarin.iOS10/DevExpress.XamarinForms.Charts.dll",
+        "lib/Xamarin.iOS10/DevExpress.XamarinForms.Charts.iOS.dll",
+        "lib/Xamarin.iOS10/DevExpress.XamarinForms.Charts.xml",
+        "lib/netstandard2.0/DevExpress.XamarinForms.Charts.dll",
+        "lib/netstandard2.0/DevExpress.XamarinForms.Charts.xml"
+      ]
+    },
+    "DevExpress.XamarinForms.Core/21.2.5": {
+      "sha512": "bHfy6zFCj5T0Pw/Jh4ySXrq9+VuUyJVrxgRGQMVH/FvvLip/wsvY+7BgttM9z31pMGktmM3qN1y7Swabh76K/w==",
+      "type": "package",
+      "path": "devexpress.xamarinforms.core/21.2.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "devexpress.xamarinforms.core.21.2.5.nupkg.sha512",
+        "devexpress.xamarinforms.core.nuspec",
+        "lib/MonoAndroid10/DevExpress.XamarinForms.Core.Android.dll",
+        "lib/MonoAndroid10/DevExpress.XamarinForms.Core.dll",
+        "lib/MonoAndroid10/DevExpress.XamarinForms.Core.xml",
+        "lib/Xamarin.iOS10/DevExpress.XamarinForms.Core.dll",
+        "lib/Xamarin.iOS10/DevExpress.XamarinForms.Core.iOS.dll",
+        "lib/Xamarin.iOS10/DevExpress.XamarinForms.Core.xml",
+        "lib/netstandard2.0/DevExpress.XamarinForms.Core.dll",
+        "lib/netstandard2.0/DevExpress.XamarinForms.Core.xml"
+      ]
+    },
     "Microcharts/0.9.5.9": {
       "sha512": "oiaPjsC+l211tRXw17bxT7D1uPHLZG4wZq7w9h9w7LFX76s4ppLN9UGVkUQJ2vBammdFH0JXtbvEUVtbOq85UQ==",
       "type": "package",
@@ -2865,7 +2937,8 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.devexpress.com/GCjoQA2cVNpwbtEO5zgojWkAAW2ktpUM4oL3VGdG4BFiYdxYEw/api": {}
       },
       "frameworks": {
         "monoandroid11.0": {

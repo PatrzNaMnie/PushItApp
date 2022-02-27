@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using Microcharts;
 using ProgressRingControl.Forms.Plugin;
+using PushITapp.Data;
 using PushITapp.Services;
 using SkiaSharp;
 using Xamarin.Forms;
@@ -26,7 +27,21 @@ namespace PushITapp.ViewModels
         private SKColor ChartOfDaysColor = SKColor.Parse("#A659FF");
 
 
+        // ------------------------------------
 
+        readonly SeriesData pushUpsSeriesData;
+
+        readonly SeriesData daysSeriesData;
+
+        public SeriesData PushUpsSeriesData => pushUpsSeriesData;
+        public string PushUpsCenterLabelPattern => $"Push ups\n{PushUpsService.GetPushUps(UsersService.GetUser(HashCode).Result).Result}";
+
+        public SeriesData DaysSeriesData => daysSeriesData;
+        public string DaysCenterLabelPattern => $"Days\n{pushUpsData.GetCompletedDays()}";
+
+        public List<DateTimeData> EuropePopulationData { get; }
+
+        // ------------------------------------
 
         public StatisticsViewModel()
         {
@@ -36,9 +51,31 @@ namespace PushITapp.ViewModels
 
             pushUpsData = new PushUpsData(PushUpsService.GetPushUps(UsersService.GetUser(HashCode).Result).Result);
 
+            var pushUpsValues = HistoricalData.HistoricalValues(HashCode).ToArray();
+
+            var days = HistoricalData.EveryDayInYear().ToArray();
+
             var PushUpsChartEntries = new List<ChartEntry>();
 
             var DaysChartEntries = new List<ChartEntry>();
+
+
+            // --------------------------
+
+            pushUpsSeriesData = new SeriesData("Completed push ups", PushUpsService.GetPushUps(UsersService.GetUser(HashCode).Result).Result,
+                "Puish ups to go", pushUpsData.NumOfPushUps() - PushUpsService.GetPushUps(UsersService.GetUser(HashCode).Result).Result);
+
+            daysSeriesData = new SeriesData("Completed days", pushUpsData.GetCompletedDays(),
+                "Days to go", calendar.GetDaysInYear(DateTime.Now.Year) - pushUpsData.GetCompletedDays());
+
+            EuropePopulationData = new List<DateTimeData>();
+
+            for (int i = 0; i < days.Length; i++)
+            {
+                EuropePopulationData.Add(new DateTimeData(days[i], pushUpsValues[i]));
+            }
+
+            // ---------------------------
 
             PushUpsChartEntries.Add(new ChartEntry(PushUpsService.GetPushUps(UsersService.GetUser(HashCode).Result).Result)
             {
@@ -60,6 +97,7 @@ namespace PushITapp.ViewModels
             ChartOfPushUps = new RadialGaugeChart { Entries = PushUpsChartEntries, LabelTextSize = 30f, MaxValue = pushUpsData.NumOfPushUps() };
 
             ChartOfDays = new RadialGaugeChart { Entries = DaysChartEntries, LabelTextSize = 30f, MaxValue = calendar.GetDaysInYear(DateTime.Now.Year) };
+
         }
 
         public string HashCode
@@ -82,8 +120,9 @@ namespace PushITapp.ViewModels
         }
 
 
-    }
 
     }
+
+}
 
 

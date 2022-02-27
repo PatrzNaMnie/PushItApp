@@ -30,6 +30,7 @@ namespace PushITapp.ViewModels
 
         public int correctAmount;
 
+        public int proportionalAmount;
 
         private CancellationTokenSource _tokenSource;
         public PushUpsViewModel()
@@ -46,8 +47,6 @@ namespace PushITapp.ViewModels
             Switch = new AsyncCommand<object>(switchToProportional);
 
             DailyPushUps = pushUpsData.DailyPushUps();
-
-
 
         }
 
@@ -92,7 +91,7 @@ namespace PushITapp.ViewModels
                 pushUpsData.AddPushUps(value, Services.HashCode.GetHashCode());
 
                 if(proportional == true)
-                    DailyPushUps = pushUpsData.Proportional();
+                    CorrectAmout = pushUpsData.GetProportionalAmount(HashCode);
                 else
                     CorrectAmout = pushUpsData.GetCorrectAmount();
 
@@ -127,6 +126,7 @@ namespace PushITapp.ViewModels
 
                 if (proportional == true)
                 {
+                    CorrectAmout = pushUpsData.GetProportionalAmount(HashCode);
                     DailyPushUps = pushUpsData.Proportional();
                 }
 

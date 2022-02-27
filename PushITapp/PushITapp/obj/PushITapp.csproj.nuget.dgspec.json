@@ -26,7 +26,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.devexpress.com/GCjoQA2cVNpwbtEO5zgojWkAAW2ktpUM4oL3VGdG4BFiYdxYEw/api": {}
         },
         "frameworks": {
           "netstandard2.0": {
@@ -44,6 +45,10 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "dependencies": {
+            "DevExpress.XamarinForms.Charts": {
+              "target": "Package",
+              "version": "[21.2.5, )"
+            },
             "Microcharts": {
               "target": "Package",
               "version": "[0.9.5.9, )"

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -68,6 +69,17 @@ namespace PushITapp.Services
                 return 0;
             else
                 return pushUps - pushUpsCompleted;
+        }
+
+        public int GetProportionalAmount(string hashCode)
+        {
+            var historical = HistoricalService.GetHistoricalByUserIdAndDate(UsersService.GetUser(hashCode).Result, DateTime.Now.Date.ToString("yyyy-MM-dd")).Result;
+            var amount = historical.Sum(p => p.PushUps);
+
+            if (Proportional() - amount < 0)
+                return 0;
+            else
+                return Proportional() - amount;
         }
 
         // Add push ups

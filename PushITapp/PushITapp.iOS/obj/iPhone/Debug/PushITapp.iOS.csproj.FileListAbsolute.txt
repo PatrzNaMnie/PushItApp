@@ -78,3 +78,8 @@ C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITap
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp.iOS\bin\iPhone\Debug\SkiaSharp.Views.Forms.dll
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp.iOS\bin\iPhone\Debug\ProgressRing.Forms.Plugin.dll
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp.iOS\bin\iPhone\Debug\ProgressRing.Forms.Plugin.iOS.dll
+C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp.iOS\bin\iPhone\Debug\DevExpress.Xamarin.iOS.Charts.dll
+C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp.iOS\bin\iPhone\Debug\DevExpress.XamarinForms.Charts.dll
+C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp.iOS\bin\iPhone\Debug\DevExpress.XamarinForms.Charts.iOS.dll
+C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp.iOS\bin\iPhone\Debug\DevExpress.XamarinForms.Core.dll
+C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp.iOS\bin\iPhone\Debug\DevExpress.XamarinForms.Core.iOS.dll

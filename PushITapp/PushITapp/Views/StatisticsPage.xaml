@@ -5,7 +5,8 @@
              xmlns:microcharts="clr-namespace:Microcharts;assembly=Microcharts" 
              xmlns:control="clr-namespace:ProgressRingControl.Forms.Plugin;assembly=ProgressRing.Forms.Plugin"
              x:Class="PushITapp.Views.StatisticsPage"
-            xmlns:Charts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms">
+            xmlns:Charts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms" 
+             xmlns:charts="http://schemas.devexpress.com/xamarin/2014/forms/charts">
     <ContentPage.BindingContext>
         <viewmodel:StatisticsViewModel/>
     </ContentPage.BindingContext>
@@ -16,7 +17,12 @@
             <RowDefinition Height="200"/>
         </Grid.RowDefinitions>
 
-        <Charts:ChartView Chart="{Binding ChartofPushUps}"
+        <!--<Charts:ChartView Chart="{Binding ChartofDailyPushUps}"
+                          HeightRequest="300"
+                          VerticalOptions="Start"
+                          HorizontalOptions="Fill" Grid.Row="1" Grid.ColumnSpan="2"/>-->
+
+        <!--<Charts:ChartView Chart="{Binding ChartofPushUps}"
                           HeightRequest="100"
                           VerticalOptions="Fill"
                           HorizontalOptions="Fill" Grid.Row="2" Grid.Column="1"/>
@@ -25,11 +31,62 @@
         <Charts:ChartView Chart="{Binding ChartofDays}"
                           HeightRequest="100"
                           VerticalOptions="Fill"
-                          HorizontalOptions="Fill" Grid.Row="2" Grid.Column="0"/>
+                          HorizontalOptions="Fill" Grid.Row="2" Grid.Column="0"/>-->
 
-        <!--<control:ProgressRing RingThickness="10" Progress="0.2" Grid.Row="2" Grid.Column="0" RingBaseColor="LightGray" ProgressColor="#FF5959"/>
-        <control:ProgressRing RingThickness="10" Progress="0.1" Grid.Row="2" Grid.Column="1" RingBaseColor="LightGray" ProgressColor="#A659FF"/>-->
+        <charts:PieChartView SelectionMode="Single" SelectionBehavior="Hatch" Grid.Row="2" Grid.Column="0" >
+            <charts:PieChartView.Hint>
+                <charts:PieHint ShowMode="OnTap"/>
+            </charts:PieChartView.Hint>
+            <charts:PieChartView.Series>
+                <charts:DonutSeries Data="{Binding PushUpsSeriesData}">
+                    <charts:DonutSeries.CenterLabel>
+                        <charts:PieCenterTextLabel TextPattern="{Binding PushUpsCenterLabelPattern}" ContentRatio="0.9"/>
+                    </charts:DonutSeries.CenterLabel>
+                    <charts:DonutSeries.HintOptions>
+                        <charts:PieSeriesHintOptions PointTextPattern="{}{L}: {VP}% {V}"/>
+                    </charts:DonutSeries.HintOptions>
+                </charts:DonutSeries>
+            </charts:PieChartView.Series>
+        </charts:PieChartView>
 
+        <charts:PieChartView SelectionMode="Single" SelectionBehavior="Hatch" Grid.Row="2" Grid.Column="1" >
+            <charts:PieChartView.Hint>
+                <charts:PieHint ShowMode="OnTap"/>
+            </charts:PieChartView.Hint>
+            <charts:PieChartView.Series>
+                <charts:DonutSeries Data="{Binding DaysSeriesData}">
+                    <charts:DonutSeries.CenterLabel>
+                        <charts:PieCenterTextLabel TextPattern="{Binding DaysCenterLabelPattern}" ContentRatio="0.5"/>
+                    </charts:DonutSeries.CenterLabel>
+                    <charts:DonutSeries.HintOptions>
+                        <charts:PieSeriesHintOptions PointTextPattern="{}{L}: {VP}% {V}"/>
+                    </charts:DonutSeries.HintOptions>
+                </charts:DonutSeries>
+            </charts:PieChartView.Series>
+        </charts:PieChartView>
+
+        <charts:ChartView Grid.Row="1" Grid.ColumnSpan="2" AxisXNavigationMode="ScrollingAndZooming">
+            <charts:ChartView.Series>
+                <charts:LineSeries>
+                    <charts:LineSeries.Data>
+                        <charts:SeriesDataAdapter DataSource="{Binding EuropePopulationData}"
+                                       ArgumentDataMember="Year">
+                            <charts:ValueDataMember Type="Value" Member="Population"/>
+                        </charts:SeriesDataAdapter>
+                    </charts:LineSeries.Data>
+                </charts:LineSeries>
+            </charts:ChartView.Series>
+            <charts:ChartView.Hint>
+                <charts:Hint>
+                    <charts:Hint.Behavior>
+                        <charts:CrosshairHintBehavior GroupHeaderTextPattern="Year: {A$YYYY}" 
+                                           MaxSeriesCount="3"/>
+                    </charts:Hint.Behavior>
+
+                </charts:Hint>
+            </charts:ChartView.Hint>
+
+        </charts:ChartView>
     </Grid>
     
 </ContentPage>

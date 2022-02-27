@@ -3,6 +3,11 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "PushITapp.Android.dll" comes first in this list. */
 		"PushITapp.Android.dll",
+		"DevExpress.Xamarin.Android.Charts.dll",
+		"DevExpress.XamarinForms.Charts.Android.dll",
+		"DevExpress.XamarinForms.Charts.dll",
+		"DevExpress.XamarinForms.Core.Android.dll",
+		"DevExpress.XamarinForms.Core.dll",
 		"FormsViewGroup.dll",
 		"Microcharts.dll",
 		"Microcharts.Droid.dll",
