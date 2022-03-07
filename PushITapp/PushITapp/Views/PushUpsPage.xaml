@@ -15,16 +15,16 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="100"/>
-                <RowDefinition Height="300"/>
+                <RowDefinition Height="350"/>
                 <RowDefinition Height="100"/>
             </Grid.RowDefinitions>
-
+            
             <Label Grid.Row="0" Text="{Binding HashCode}" TextColor="LightGray"/>
             
-            <Frame Grid.Row="0" HeightRequest="20" WidthRequest="200" BorderColor="#041562" HorizontalOptions="Center" VerticalOptions="Center" CornerRadius="20">
-                <Label Text="Proportional" TextColor="#041562" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20"/>
+            <Frame Grid.Row="0" HeightRequest="25" WidthRequest="150" BorderColor="#041562" HorizontalOptions="Center" VerticalOptions="Center" CornerRadius="20">
+                <Label Text="{Binding CountingType}" TextColor="#041562" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20"/>
             </Frame>
-            <Frame BackgroundColor="#041562" Grid.Row ="1" HeightRequest="150" WidthRequest="150" CornerRadius="200" HorizontalOptions="End" VerticalOptions="Start" Padding="3">
+            <Frame BackgroundColor="#041562" Grid.Row ="1" HeightRequest="150" WidthRequest="150" CornerRadius="200" HorizontalOptions="End" VerticalOptions="Start" Padding="3" >
                 <Frame Grid.Row ="1" HeightRequest="150" WidthRequest="150" CornerRadius="200" HorizontalOptions="Center" VerticalOptions="Center" Margin="0" Padding="0" BackgroundColor="White">
                     <Label Text="{Binding DailyPushUps}" TextColor="LightGray" VerticalOptions="Center" HorizontalOptions="Center" FontSize="60"/>
                 </Frame>
@@ -35,7 +35,7 @@
                         <Entry.Behaviors>
                             <xct:UserStoppedTypingBehavior
                                 Command="{Binding AddCommand}"
-                                StoppedTypingTimeThreshold="1000"
+                                StoppedTypingTimeThreshold="2000"
                                 ShouldDismissKeyboardAutomatically="True"
                                 MinimumLengthThreshold="1"/>
                         </Entry.Behaviors>

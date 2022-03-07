@@ -32,6 +32,7 @@
     <TabBar>
         <ShellContent Title="PushUps" Icon="icon_about.png" Route="PushUpsPage" ContentTemplate="{DataTemplate local:PushUpsPage}"/>
         <ShellContent Title="Statistics" Icon="icon_feed.png" Route="StatisticsPage" ContentTemplate="{DataTemplate local:StatisticsPage}" />
+        <ShellContent Title="Body" Icon="icon_feed.png" Route="BodyPage" ContentTemplate="{DataTemplate local:BodyPage}" />
     </TabBar>
 
     <!--

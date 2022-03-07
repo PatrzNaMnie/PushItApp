@@ -33,8 +33,12 @@ namespace PushITapp.ViewModels
         public int proportionalAmount;
 
         private CancellationTokenSource _tokenSource;
+
+        public string countingType;
         public PushUpsViewModel()
         {
+
+            CountingType = "Day by day";
 
             AddCommand = new AsyncCommand<object>(AddPushUps);
 
@@ -74,6 +78,12 @@ namespace PushITapp.ViewModels
             set => SetProperty(ref correctAmount, value);
         }
 
+        public string CountingType
+        {
+            get => countingType;
+            set => SetProperty(ref countingType, value);
+        }
+
         async Task AddPushUps(object entryValue)
         {
             var _entryValue = (string)entryValue;
@@ -88,7 +98,7 @@ namespace PushITapp.ViewModels
                 await Task.Delay(1000);
 
                 var value = Int32.Parse(_entryValue);
-                pushUpsData.AddPushUps(value, Services.HashCode.GetHashCode());
+                pushUpsData.AddPushUps(value, HashCode);
 
                 if(proportional == true)
                     CorrectAmout = pushUpsData.GetProportionalAmount(HashCode);
@@ -101,13 +111,6 @@ namespace PushITapp.ViewModels
 
         }
 
-        public void Entry_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            var value = (int)sender;
-            pushUpsData.AddPushUps(value, Services.HashCode.GetHashCode());
-            CorrectAmout = pushUpsData.GetCorrectAmount();
-
-        }
 
         // Mode switch Proportional/DayByDay
         public async Task switchToProportional(object sender)
@@ -117,12 +120,16 @@ namespace PushITapp.ViewModels
             {
                 proportional = false;
 
+                CountingType = "Day by day";
+
                 CorrectAmout = pushUpsData.GetCorrectAmount();
                 DailyPushUps = pushUpsData.DailyPushUps();
             }
             else
             {
                 proportional = true;
+
+                CountingType = "Proportional";
 
                 if (proportional == true)
                 {

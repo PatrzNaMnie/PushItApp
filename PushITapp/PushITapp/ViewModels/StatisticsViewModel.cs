@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using Microcharts;
+using MvvmHelpers.Commands;
 using ProgressRingControl.Forms.Plugin;
 using PushITapp.Data;
 using PushITapp.Services;
@@ -18,20 +20,17 @@ namespace PushITapp.ViewModels
 
         private string _hashCode;
 
-        public RadialGaugeChart ChartOfPushUps;
-
-        public RadialGaugeChart ChartOfDays;
-
-
         private SKColor ChartOfPushUpsColor = SKColor.Parse("#FF5959");
         private SKColor ChartOfDaysColor = SKColor.Parse("#A659FF");
 
 
         // ------------------------------------
 
-        readonly SeriesData pushUpsSeriesData;
+        private SeriesData pushUpsSeriesData;
 
-        readonly SeriesData daysSeriesData;
+        private SeriesData daysSeriesData;
+
+        private List<DateTimeData> europePopulationData;
 
         public SeriesData PushUpsSeriesData => pushUpsSeriesData;
         public string PushUpsCenterLabelPattern => $"Push ups\n{PushUpsService.GetPushUps(UsersService.GetUser(HashCode).Result).Result}";
@@ -39,65 +38,51 @@ namespace PushITapp.ViewModels
         public SeriesData DaysSeriesData => daysSeriesData;
         public string DaysCenterLabelPattern => $"Days\n{pushUpsData.GetCompletedDays()}";
 
-        public List<DateTimeData> EuropePopulationData { get; }
+        public List<DateTimeData> EuropePopulationData => europePopulationData;
 
         // ------------------------------------
 
+        public AsyncCommand Refresh { get; }
+
+        public bool _isRefreshing;
+
+        private Calendar calendar;
+
+        private DateTime[] days;
+
+        private int[] pushUpsValues;
         public StatisticsViewModel()
         {
-            Calendar calendar = new GregorianCalendar();
+            calendar = new GregorianCalendar();
 
             HashCode =  Services.HashCode.GetHashCode();
 
             pushUpsData = new PushUpsData(PushUpsService.GetPushUps(UsersService.GetUser(HashCode).Result).Result);
 
-            var pushUpsValues = HistoricalData.HistoricalValues(HashCode).ToArray();
+            pushUpsValues = HistoricalData.HistoricalValues(HashCode).ToArray();
 
-            var days = HistoricalData.EveryDayInYear().ToArray();
+            days = HistoricalData.EveryDayInYear().ToArray();
 
-            var PushUpsChartEntries = new List<ChartEntry>();
-
-            var DaysChartEntries = new List<ChartEntry>();
 
 
             // --------------------------
 
             pushUpsSeriesData = new SeriesData("Completed push ups", PushUpsService.GetPushUps(UsersService.GetUser(HashCode).Result).Result,
-                "Puish ups to go", pushUpsData.NumOfPushUps() - PushUpsService.GetPushUps(UsersService.GetUser(HashCode).Result).Result);
+                "Push ups to go", pushUpsData.NumOfPushUps() - PushUpsService.GetPushUps(UsersService.GetUser(HashCode).Result).Result);
 
             daysSeriesData = new SeriesData("Completed days", pushUpsData.GetCompletedDays(),
                 "Days to go", calendar.GetDaysInYear(DateTime.Now.Year) - pushUpsData.GetCompletedDays());
 
-            EuropePopulationData = new List<DateTimeData>();
+            europePopulationData = new List<DateTimeData>();
 
             for (int i = 0; i < days.Length; i++)
             {
-                EuropePopulationData.Add(new DateTimeData(days[i], pushUpsValues[i]));
+                europePopulationData.Add(new DateTimeData(days[i], pushUpsValues[i]));
             }
 
             // ---------------------------
 
-            PushUpsChartEntries.Add(new ChartEntry(PushUpsService.GetPushUps(UsersService.GetUser(HashCode).Result).Result)
-            {
-                Color = ChartOfPushUpsColor,
-                ValueLabel = $"{pushUpsData.GetPrcOfPushUps()} %",
-                Label = "PushUps",
-                ValueLabelColor = ChartOfPushUpsColor
-            });
-
-            DaysChartEntries.Add(new ChartEntry(pushUpsData.GetCompletedDays())
-            {
-                Color = ChartOfDaysColor,
-                ValueLabel = $"{pushUpsData.GetCompletedDays()}",
-                Label = "Days",
-                ValueLabelColor = ChartOfDaysColor
-            });
-
-
-            ChartOfPushUps = new RadialGaugeChart { Entries = PushUpsChartEntries, LabelTextSize = 30f, MaxValue = pushUpsData.NumOfPushUps() };
-
-            ChartOfDays = new RadialGaugeChart { Entries = DaysChartEntries, LabelTextSize = 30f, MaxValue = calendar.GetDaysInYear(DateTime.Now.Year) };
-
+            Refresh = new AsyncCommand(RefreshStatistics);
         }
 
         public string HashCode
@@ -106,21 +91,33 @@ namespace PushITapp.ViewModels
             set => SetProperty(ref _hashCode, value);
         }
 
-        public RadialGaugeChart ChartofPushUps
-        {
-            get => ChartOfPushUps;
-            set => SetProperty(ref ChartOfPushUps, value);
-        }
-
-        public RadialGaugeChart ChartofDays
+        async Task RefreshStatistics()
         {
 
-            get => ChartOfDays;
-            set => SetProperty(ref ChartOfDays, value);
+            pushUpsValues = HistoricalData.HistoricalValues(HashCode).ToArray();
+
+            pushUpsSeriesData = new SeriesData("Completed push ups", PushUpsService.GetPushUps(UsersService.GetUser(HashCode).Result).Result,
+                "Puish ups to go", pushUpsData.NumOfPushUps() - PushUpsService.GetPushUps(UsersService.GetUser(HashCode).Result).Result);
+
+            daysSeriesData = new SeriesData("Completed days", pushUpsData.GetCompletedDays(),
+                "Days to go", calendar.GetDaysInYear(DateTime.Now.Year) - pushUpsData.GetCompletedDays());
+
+            europePopulationData.Clear();
+
+
+            for (int i = 0; i < days.Length; i++)
+            {
+                europePopulationData.Add(new DateTimeData(days[i], pushUpsValues[i]));
+            }
+
+            isRefreshing = false;
         }
 
-
-
+        public bool isRefreshing
+        {
+            get => _isRefreshing;
+            set => SetProperty(ref _isRefreshing, value);
+        }
     }
 
 }

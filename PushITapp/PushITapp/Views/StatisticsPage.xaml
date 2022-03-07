@@ -10,83 +10,76 @@
     <ContentPage.BindingContext>
         <viewmodel:StatisticsViewModel/>
     </ContentPage.BindingContext>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="300"/>
-            <RowDefinition Height="200"/>
-        </Grid.RowDefinitions>
+    <RefreshView Command="{Binding Refresh}" IsRefreshing="{Binding isRefreshing}" RefreshColor="#FF5959">
+        <ScrollView>
+            <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="300"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="200"/>
+            </Grid.RowDefinitions>
 
-        <!--<Charts:ChartView Chart="{Binding ChartofDailyPushUps}"
-                          HeightRequest="300"
-                          VerticalOptions="Start"
-                          HorizontalOptions="Fill" Grid.Row="1" Grid.ColumnSpan="2"/>-->
+            <Label Text="Historical value" TextColor="#343434" FontSize="30" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <charts:ChartView Grid.Row="1" Grid.ColumnSpan="2" AxisXNavigationMode="ScrollingAndZooming">
+                <charts:ChartView.Series>
+                    <charts:LineSeries>
+                        <charts:LineSeries.Data>
+                            <charts:SeriesDataAdapter DataSource="{Binding EuropePopulationData}"
+                                           ArgumentDataMember="Year">
+                                <charts:ValueDataMember Type="Value" Member="Population"/>
+                            </charts:SeriesDataAdapter>
+                        </charts:LineSeries.Data>
+                    </charts:LineSeries>
+                </charts:ChartView.Series>
+                <charts:ChartView.Hint>
+                    <charts:Hint>
+                        <charts:Hint.Behavior>
+                            <charts:CrosshairHintBehavior GroupHeaderTextPattern="Year: {A$YYYY}" 
+                                               MaxSeriesCount="3"/>
+                        </charts:Hint.Behavior>
 
-        <!--<Charts:ChartView Chart="{Binding ChartofPushUps}"
-                          HeightRequest="100"
-                          VerticalOptions="Fill"
-                          HorizontalOptions="Fill" Grid.Row="2" Grid.Column="1"/>
+                    </charts:Hint>
+                </charts:ChartView.Hint>
 
+            </charts:ChartView>
+        
+            <Label Text="Acctual values" TextColor="#343434" FontSize="30" Grid.Row="2" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center"/>
 
-        <Charts:ChartView Chart="{Binding ChartofDays}"
-                          HeightRequest="100"
-                          VerticalOptions="Fill"
-                          HorizontalOptions="Fill" Grid.Row="2" Grid.Column="0"/>-->
+            <charts:PieChartView SelectionMode="Single" SelectionBehavior="Hatch" Grid.Row="3" Grid.Column="0" >
+                <charts:PieChartView.Hint>
+                    <charts:PieHint ShowMode="OnTap"/>
+                </charts:PieChartView.Hint>
+                <charts:PieChartView.Series>
+                    <charts:DonutSeries Data="{Binding PushUpsSeriesData}">
+                        <charts:DonutSeries.CenterLabel>
+                            <charts:PieCenterTextLabel TextPattern="{Binding PushUpsCenterLabelPattern}" ContentRatio="0.9"/>
+                        </charts:DonutSeries.CenterLabel>
+                        <charts:DonutSeries.HintOptions>
+                            <charts:PieSeriesHintOptions PointTextPattern="{}{L}: {VP}% {V}"/>
+                        </charts:DonutSeries.HintOptions>
+                    </charts:DonutSeries>
+                </charts:PieChartView.Series>
+            </charts:PieChartView>
 
-        <charts:PieChartView SelectionMode="Single" SelectionBehavior="Hatch" Grid.Row="2" Grid.Column="0" >
-            <charts:PieChartView.Hint>
-                <charts:PieHint ShowMode="OnTap"/>
-            </charts:PieChartView.Hint>
-            <charts:PieChartView.Series>
-                <charts:DonutSeries Data="{Binding PushUpsSeriesData}">
-                    <charts:DonutSeries.CenterLabel>
-                        <charts:PieCenterTextLabel TextPattern="{Binding PushUpsCenterLabelPattern}" ContentRatio="0.9"/>
-                    </charts:DonutSeries.CenterLabel>
-                    <charts:DonutSeries.HintOptions>
-                        <charts:PieSeriesHintOptions PointTextPattern="{}{L}: {VP}% {V}"/>
-                    </charts:DonutSeries.HintOptions>
-                </charts:DonutSeries>
-            </charts:PieChartView.Series>
-        </charts:PieChartView>
+            <charts:PieChartView SelectionMode="Single" SelectionBehavior="Hatch" Grid.Row="3" Grid.Column="1" >
+                <charts:PieChartView.Hint>
+                    <charts:PieHint ShowMode="OnTap"/>
+                </charts:PieChartView.Hint>
+                <charts:PieChartView.Series>
+                    <charts:DonutSeries Data="{Binding DaysSeriesData}">
+                        <charts:DonutSeries.CenterLabel>
+                            <charts:PieCenterTextLabel TextPattern="{Binding DaysCenterLabelPattern}" ContentRatio="0.5"/>
+                        </charts:DonutSeries.CenterLabel>
+                        <charts:DonutSeries.HintOptions>
+                            <charts:PieSeriesHintOptions PointTextPattern="{}{L}: {VP}% {V}"/>
+                        </charts:DonutSeries.HintOptions>
+                    </charts:DonutSeries>
+                </charts:PieChartView.Series>
+            </charts:PieChartView>
 
-        <charts:PieChartView SelectionMode="Single" SelectionBehavior="Hatch" Grid.Row="2" Grid.Column="1" >
-            <charts:PieChartView.Hint>
-                <charts:PieHint ShowMode="OnTap"/>
-            </charts:PieChartView.Hint>
-            <charts:PieChartView.Series>
-                <charts:DonutSeries Data="{Binding DaysSeriesData}">
-                    <charts:DonutSeries.CenterLabel>
-                        <charts:PieCenterTextLabel TextPattern="{Binding DaysCenterLabelPattern}" ContentRatio="0.5"/>
-                    </charts:DonutSeries.CenterLabel>
-                    <charts:DonutSeries.HintOptions>
-                        <charts:PieSeriesHintOptions PointTextPattern="{}{L}: {VP}% {V}"/>
-                    </charts:DonutSeries.HintOptions>
-                </charts:DonutSeries>
-            </charts:PieChartView.Series>
-        </charts:PieChartView>
+        </Grid>
+        </ScrollView>
+    </RefreshView>
 
-        <charts:ChartView Grid.Row="1" Grid.ColumnSpan="2" AxisXNavigationMode="ScrollingAndZooming">
-            <charts:ChartView.Series>
-                <charts:LineSeries>
-                    <charts:LineSeries.Data>
-                        <charts:SeriesDataAdapter DataSource="{Binding EuropePopulationData}"
-                                       ArgumentDataMember="Year">
-                            <charts:ValueDataMember Type="Value" Member="Population"/>
-                        </charts:SeriesDataAdapter>
-                    </charts:LineSeries.Data>
-                </charts:LineSeries>
-            </charts:ChartView.Series>
-            <charts:ChartView.Hint>
-                <charts:Hint>
-                    <charts:Hint.Behavior>
-                        <charts:CrosshairHintBehavior GroupHeaderTextPattern="Year: {A$YYYY}" 
-                                           MaxSeriesCount="3"/>
-                    </charts:Hint.Behavior>
-
-                </charts:Hint>
-            </charts:ChartView.Hint>
-
-        </charts:ChartView>
-    </Grid>
-    
 </ContentPage>

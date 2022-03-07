@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PushITapp.Views.BodyPage">
+    <ContentPage.Content>
+
+        <Frame VerticalOptions="Start" HorizontalOptions="Center" BackgroundColor="blue" Padding="0" HasShadow="False">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="200" />
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="45"/>
+                    <ColumnDefinition Width="51"/>
+                    <ColumnDefinition Width="142"/>
+                    <ColumnDefinition Width="52"/>
+                    <ColumnDefinition Width="32"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="Top.png"  Grid.Row="0" Grid.ColumnSpan="5"  Aspect="Fill" Margin="-3"/>
+                <Image Source="Left.png"  Grid.Row="1" Grid.RowSpan="3" Grid.Column="0" Aspect="Fill" Margin="-3"/>
+                <Image Source="Left_shoulder.png" Aspect="Fill" Grid.Row="1" Grid.Column="1" Margin="-3"/>
+                <Image Source="Chest_top.png" Aspect="Fill" Grid.Row="1" Grid.Column="2" Margin="-3"/>
+                <Button ImageSource="Chest_top.png"  Grid.Row="1" Grid.Column="2" Margin="-3" Scale="0.1424"/>
+                <Image Source="Right_shoulder.png" Aspect="Fill" Grid.Row="1" Grid.Column="3" Margin="-3"/>
+                <Image Source="Left_biceps.png" Aspect="Fill" Grid.Row="2" Grid.Column="1" Margin="-3"/>
+                <Button ImageSource="Left_biceps.png"  Grid.Row="2" Grid.Column="1" Margin="-3" Scale="0.1424"/>
+                <Image Source="Chest_bottom.png" Aspect="Fill" Grid.Row="2" Grid.Column="2" Margin="-3"/>
+                <Button ImageSource="Chest_bottom.png"  Grid.Row="2" Grid.Column="2" Margin="-3" Scale="0.1424"/>
+                <Image Source="Right_biceps.png" Aspect="Fill" Grid.Row="2" Grid.Column="3" Margin="-3"/>
+                <Button ImageSource="Right_biceps.png"  Grid.Row="2" Grid.Column="3" Margin="-3" Scale="0.1424"/>
+                <Image Source="Left_arm.png" Aspect="Fill" Grid.Row="3" Grid.Column="1" Margin="-3"/>
+                <Image Source="Waist.png" Aspect="Fill" Grid.Row="3" Grid.Column="2" Margin="-3"/>
+                <Button ImageSource="Waist.png"  Grid.Row="3" Grid.Column="2" Margin="-3" Scale="0.1424"/>
+                <Image Source="Right_arm.png" Aspect="Fill" Grid.Row="3" Grid.Column="3" Margin="-3"/>
+                <Image Source="Right.png" Aspect="Fill" Grid.Row="1" Grid.RowSpan="3" Grid.Column="4" Margin="-3"/>
+                <Image Source="Bottom.png" Aspect="Fill" Grid.Row="4" Grid.ColumnSpan="5" Margin="-3"/>
+                
+            </Grid>
+
+        </Frame>
+
+    </ContentPage.Content>
+</ContentPage>
