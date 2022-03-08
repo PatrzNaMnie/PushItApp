@@ -20,25 +20,18 @@ namespace PushITapp.ViewModels
 
         private string _hashCode;
 
-        private SKColor ChartOfPushUpsColor = SKColor.Parse("#FF5959");
-        private SKColor ChartOfDaysColor = SKColor.Parse("#A659FF");
-
-
         // ------------------------------------
 
-        private SeriesData pushUpsSeriesData;
+        private SeriesData _pushUpsSeriesData;
 
-        private SeriesData daysSeriesData;
+        private SeriesData _daysSeriesData;
 
-        private List<DateTimeData> europePopulationData;
+        private List<DateTimeData> _europePopulationData;
 
-        public SeriesData PushUpsSeriesData => pushUpsSeriesData;
-        public string PushUpsCenterLabelPattern => $"Push ups\n{PushUpsService.GetPushUps(UsersService.GetUser(HashCode).Result).Result}";
+        public string _pushUpsCenterLabelPattern;
 
-        public SeriesData DaysSeriesData => daysSeriesData;
-        public string DaysCenterLabelPattern => $"Days\n{pushUpsData.GetCompletedDays()}";
+        public string _daysCenterLabelPattern;
 
-        public List<DateTimeData> EuropePopulationData => europePopulationData;
 
         // ------------------------------------
 
@@ -51,6 +44,8 @@ namespace PushITapp.ViewModels
         private DateTime[] days;
 
         private int[] pushUpsValues;
+
+
         public StatisticsViewModel()
         {
             calendar = new GregorianCalendar();
@@ -61,25 +56,28 @@ namespace PushITapp.ViewModels
 
             pushUpsValues = HistoricalData.HistoricalValues(HashCode).ToArray();
 
-            days = HistoricalData.EveryDayInYear().ToArray();
+            days = HistoricalData.ToTheseDay().ToArray();
 
+            PushUpsCenterLabelPattern = $"Push ups\n{PushUpsService.GetPushUps(UsersService.GetUser(HashCode).Result).Result}";
 
+            DaysCenterLabelPattern = $"Days\n{pushUpsData.GetCompletedDays()}";
 
             // --------------------------
 
-            pushUpsSeriesData = new SeriesData("Completed push ups", PushUpsService.GetPushUps(UsersService.GetUser(HashCode).Result).Result,
+            PushUpsSeriesData = new SeriesData("Completed push ups", PushUpsService.GetPushUps(UsersService.GetUser(HashCode).Result).Result,
                 "Push ups to go", pushUpsData.NumOfPushUps() - PushUpsService.GetPushUps(UsersService.GetUser(HashCode).Result).Result);
 
-            daysSeriesData = new SeriesData("Completed days", pushUpsData.GetCompletedDays(),
+            DaysSeriesData = new SeriesData("Completed days", pushUpsData.GetCompletedDays(),
                 "Days to go", calendar.GetDaysInYear(DateTime.Now.Year) - pushUpsData.GetCompletedDays());
 
-            europePopulationData = new List<DateTimeData>();
+            var europePopulationData = new List<DateTimeData>();
 
             for (int i = 0; i < days.Length; i++)
             {
                 europePopulationData.Add(new DateTimeData(days[i], pushUpsValues[i]));
             }
 
+            EuropePopulationData = europePopulationData;
             // ---------------------------
 
             Refresh = new AsyncCommand(RefreshStatistics);
@@ -91,26 +89,68 @@ namespace PushITapp.ViewModels
             set => SetProperty(ref _hashCode, value);
         }
 
+        public SeriesData PushUpsSeriesData
+        {
+            get => _pushUpsSeriesData;
+            set => SetProperty(ref _pushUpsSeriesData, value);
+        }
+
+        public SeriesData DaysSeriesData
+        {
+            get => _daysSeriesData;
+            set => SetProperty(ref _daysSeriesData, value);
+        }
+
+        public List<DateTimeData> EuropePopulationData
+        {
+            get => _europePopulationData;
+            set => SetProperty(ref _europePopulationData, value);
+        }
+
+        public string PushUpsCenterLabelPattern
+        {
+            get => _pushUpsCenterLabelPattern;
+            set => SetProperty(ref _pushUpsCenterLabelPattern, value);
+        }
+        public string DaysCenterLabelPattern
+        {
+            get => _daysCenterLabelPattern;
+            set => SetProperty(ref _daysCenterLabelPattern, value);
+        }
+
+        // Refreshing charts values Task
         async Task RefreshStatistics()
         {
-
-            pushUpsValues = HistoricalData.HistoricalValues(HashCode).ToArray();
-
-            pushUpsSeriesData = new SeriesData("Completed push ups", PushUpsService.GetPushUps(UsersService.GetUser(HashCode).Result).Result,
-                "Puish ups to go", pushUpsData.NumOfPushUps() - PushUpsService.GetPushUps(UsersService.GetUser(HashCode).Result).Result);
-
-            daysSeriesData = new SeriesData("Completed days", pushUpsData.GetCompletedDays(),
-                "Days to go", calendar.GetDaysInYear(DateTime.Now.Year) - pushUpsData.GetCompletedDays());
-
-            europePopulationData.Clear();
-
-
-            for (int i = 0; i < days.Length; i++)
+            await Task.Run(()=>
             {
-                europePopulationData.Add(new DateTimeData(days[i], pushUpsValues[i]));
-            }
+                pushUpsValues = HistoricalData.HistoricalValues(HashCode).ToArray();
 
-            isRefreshing = false;
+                PushUpsSeriesData = new SeriesData("Completed push ups", PushUpsService.GetPushUps(UsersService.GetUser(HashCode).Result).Result,
+                    "Puish ups to go", pushUpsData.NumOfPushUps() - PushUpsService.GetPushUps(UsersService.GetUser(HashCode).Result).Result);
+
+                DaysSeriesData = new SeriesData("Completed days", pushUpsData.GetCompletedDays(),
+                    "Days to go", calendar.GetDaysInYear(DateTime.Now.Year) - pushUpsData.GetCompletedDays());
+
+                _europePopulationData.Clear();
+
+                EuropePopulationData = _europePopulationData;
+
+                var europePopulationData = new List<DateTimeData>();
+
+                for (int i = 0; i < days.Length; i++)
+                {
+                    europePopulationData.Add(new DateTimeData(days[i], pushUpsValues[i]));
+                }
+
+                EuropePopulationData = europePopulationData;
+
+                PushUpsCenterLabelPattern = $"Push ups\n{PushUpsService.GetPushUps(UsersService.GetUser(HashCode).Result).Result}";
+
+                DaysCenterLabelPattern = $"Days\n{pushUpsData.GetCompletedDays()}";
+
+                isRefreshing = false;
+            }
+            );
         }
 
         public bool isRefreshing
