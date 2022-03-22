@@ -689,3 +689,5 @@ C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITap
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp.Android\obj\Debug\110\res\drawable\right_biceps.png
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp.Android\obj\Debug\110\res\drawable\right_shoulder.png
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp.Android\obj\Debug\110\res\drawable\top.png
+C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp.Android\obj\Debug\110\res\drawable\icon_pushups.png
+C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp.Android\obj\Debug\110\res\drawable\icon_statistics.png

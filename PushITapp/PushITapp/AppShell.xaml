@@ -10,7 +10,10 @@
     
         https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
     -->
-
+    <ShellContent Route="StartPage"
+                      Title="StartPage"
+                      ContentTemplate="{DataTemplate local:StartPage}" />
+    
     <Shell.Resources>
         <ResourceDictionary>
             <Style x:Key="BaseStyle" TargetType="Element">
@@ -27,12 +30,13 @@
             <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
             <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
         </ResourceDictionary>
+
     </Shell.Resources>
 
     <TabBar>
-        <ShellContent Title="PushUps" Icon="icon_about.png" Route="PushUpsPage" ContentTemplate="{DataTemplate local:PushUpsPage}"/>
-        <ShellContent Title="Statistics" Icon="icon_feed.png" Route="StatisticsPage" ContentTemplate="{DataTemplate local:StatisticsPage}" />
-        <ShellContent Title="Body" Icon="icon_feed.png" Route="BodyPage" ContentTemplate="{DataTemplate local:BodyPage}" />
+        <ShellContent Title="PushUps" Icon="icon_pushUps.png" Route="PushUpsPage" ContentTemplate="{DataTemplate local:PushUpsPage}"/>
+        <ShellContent Title="Statistics" Icon="icon_statistics.png" Route="StatisticsPage" ContentTemplate="{DataTemplate local:StatisticsPage}" />
+        <!--<ShellContent Title="Body" Icon="icon_feed.png" Route="BodyPage" ContentTemplate="{DataTemplate local:BodyPage}" />-->
     </TabBar>
 
     <!--

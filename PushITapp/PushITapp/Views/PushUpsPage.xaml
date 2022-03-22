@@ -42,7 +42,8 @@
                     </Entry>
                 </Frame>
             </Frame>
-            <Button Command="{Binding Switch}"  Grid.Row="2" CornerRadius="20" WidthRequest="150" HeightRequest="50" BackgroundColor="#FF5959" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Label Text="{Binding WarningMessage}" TextColor="Red" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="End" FontSize="16"/>
+            <Button Command="{Binding Switch}" Grid.Row="2" CornerRadius="20" WidthRequest="150" HeightRequest="50" BackgroundColor="#FF5959" VerticalOptions="Center" HorizontalOptions="Center"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

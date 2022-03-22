@@ -35,6 +35,8 @@ namespace PushITapp.ViewModels
         private CancellationTokenSource _tokenSource;
 
         public string countingType;
+
+        public string warningMessage;
         public PushUpsViewModel()
         {
 
@@ -84,6 +86,12 @@ namespace PushITapp.ViewModels
             set => SetProperty(ref countingType, value);
         }
 
+        public string WarningMessage
+        {
+            get => warningMessage;
+            set => SetProperty(ref warningMessage, value);
+        }
+
         async Task AddPushUps(object entryValue)
         {
             var _entryValue = (string)entryValue;
@@ -97,13 +105,21 @@ namespace PushITapp.ViewModels
 
                 await Task.Delay(1000);
 
-                var value = Int32.Parse(_entryValue);
-                pushUpsData.AddPushUps(value, HashCode);
+                //var value = Int32.Parse(_entryValue);
+                if(Int32.TryParse(_entryValue, out int value))
+                {
+                    pushUpsData.AddPushUps(value, HashCode);
 
-                if(proportional == true)
-                    CorrectAmout = pushUpsData.GetProportionalAmount(HashCode);
+                    if (proportional == true)
+                        CorrectAmout = pushUpsData.GetProportionalAmount(HashCode);
+                    else
+                        CorrectAmout = pushUpsData.GetCorrectAmount();
+                }
                 else
-                    CorrectAmout = pushUpsData.GetCorrectAmount();
+                {
+
+                }
+               
 
                 EntryValue = "";
             }
@@ -139,6 +155,13 @@ namespace PushITapp.ViewModels
 
             }
             
+        }
+
+        public async Task warningMsg()
+        {
+            WarningMessage = "Please enter numeric value only.";
+            await Task.Delay(3000);
+            WarningMessage = "";
         }
     }
 }

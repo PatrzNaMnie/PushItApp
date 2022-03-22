@@ -13,11 +13,15 @@ namespace PushITapp
         {
             InitializeComponent();
             DependencyService.Register<MockDataStore>();
+
+
             MainPage = new AppShell();
+
         }
 
         protected override void OnStart()
         {
+ 
         }
 
         protected override void OnSleep()

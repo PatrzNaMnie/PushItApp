@@ -16,3 +16,4 @@ C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITap
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp\obj\Debug\netstandard2.0\Views\PushUpsPage.xaml.g.cs
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp\obj\Debug\netstandard2.0\Views\StatisticsPage.xaml.g.cs
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp\obj\Debug\netstandard2.0\Views\BodyPage.xaml.g.cs
+C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp\obj\Debug\netstandard2.0\Views\StartPage.xaml.g.cs

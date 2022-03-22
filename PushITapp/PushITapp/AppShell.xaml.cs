@@ -14,11 +14,9 @@ namespace PushITapp
         {
             InitializeComponent();
 
-            AddUser();
-            AddPushUp();
+            //AddUser();
+            //AddPushUp();
 
-            //Routing.RegisterRoute(nameof(PushUpsPage), typeof(PushUpsPage));
-            //Routing.RegisterRoute(nameof(StatisticsPage), typeof(StatisticsPage));
         }
 
         /// <summary>
