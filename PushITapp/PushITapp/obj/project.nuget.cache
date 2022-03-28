@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "bdkzxlZfS5s9QM7bufGE4G3AdLz4W8dVqSAurpLNKyCGeptCP+eWZKLve2TzD4JeWnElHgQOc2iWYrgrbVRCMA==",
+  "dgSpecHash": "l5M6YmVdA7TswOKO8co2ebdiyKSdhwhN+8XBI0UTnRK5HO5Lpfsk6VRjx5uiL0IhnjemhQDDcz0moUQ/uR2R/w==",
   "success": true,
   "projectFilePath": "C:\\Wojciechowski\\-- MOJE --\\Programowanie\\PushITapp\\PushITapp\\PushITapp\\PushITapp\\PushITapp.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\kwojciechowski\\.nuget\\packages\\com.airbnb.xamarin.forms.lottie\\4.1.0\\com.airbnb.xamarin.forms.lottie.4.1.0.nupkg.sha512",
     "C:\\Users\\kwojciechowski\\.nuget\\packages\\devexpress.xamarinforms.charts\\21.2.5\\devexpress.xamarinforms.charts.21.2.5.nupkg.sha512",
     "C:\\Users\\kwojciechowski\\.nuget\\packages\\devexpress.xamarinforms.core\\21.2.5\\devexpress.xamarinforms.core.21.2.5.nupkg.sha512",
     "C:\\Users\\kwojciechowski\\.nuget\\packages\\microcharts\\0.9.5.9\\microcharts.0.9.5.9.nupkg.sha512",

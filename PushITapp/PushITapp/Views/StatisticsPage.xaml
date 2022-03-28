@@ -20,7 +20,7 @@
                 <RowDefinition Height="200"/>
             </Grid.RowDefinitions>
 
-            <Label Text="Historical value" TextColor="#343434" FontSize="30" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Label Text="Historical values" TextColor="#343434" FontSize="30" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center"/>
             <charts:ChartView Grid.Row="1" Grid.ColumnSpan="2" AxisXNavigationMode="ScrollingAndZooming">
                 <charts:ChartView.Series>
                     <charts:LineSeries>

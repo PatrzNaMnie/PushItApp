@@ -27,6 +27,12 @@
                     </VisualStateGroupList>
                 </Setter>
             </Style>
+            <OnPlatform x:Key="Fontello" x:TypeArguments="x:String">
+                <On Platform="Android" Value="fontello.ttf#fontello" />
+            </OnPlatform>
+            <OnPlatform x:Key="Lemon" x:TypeArguments="x:String">
+                <On Platform="Android" Value="LEMONMILK-Medium.otf#LEMONMILK-Medium" />
+            </OnPlatform>
         </ResourceDictionary>        
     </Application.Resources>
 </Application>

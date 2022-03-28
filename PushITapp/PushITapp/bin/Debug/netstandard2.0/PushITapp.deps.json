@@ -9,6 +9,7 @@
     ".NETStandard,Version=v2.0/": {
       "PushITapp/1.0.0": {
         "dependencies": {
+          "Com.Airbnb.Xamarin.Forms.Lottie": "4.1.0",
           "DevExpress.XamarinForms.Charts": "21.2.5",
           "Microcharts": "0.9.5.9",
           "Microcharts.Forms": "0.9.5.9",
@@ -25,6 +26,17 @@
         },
         "runtime": {
           "PushITapp.dll": {}
+        }
+      },
+      "Com.Airbnb.Xamarin.Forms.Lottie/4.1.0": {
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2012"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Lottie.Forms.dll": {
+            "assemblyVersion": "4.1.0.0",
+            "fileVersion": "4.1.0.0"
+          }
         }
       },
       "DevExpress.XamarinForms.Charts/21.2.5": {
@@ -715,6 +727,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Com.Airbnb.Xamarin.Forms.Lottie/4.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-me1BrWHvNPz3UQYXK0K5BZTbBIEYpbE5JbkUsO38tnvacLLMo8vBjmf11A6so2b3sCKtj4P3ixKu9EnZEjGs5g==",
+      "path": "com.airbnb.xamarin.forms.lottie/4.1.0",
+      "hashPath": "com.airbnb.xamarin.forms.lottie.4.1.0.nupkg.sha512"
     },
     "DevExpress.XamarinForms.Charts/21.2.5": {
       "type": "package",

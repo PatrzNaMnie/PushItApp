@@ -2,7 +2,6 @@ C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITap
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp\bin\Debug\netstandard2.0\PushITapp.dll
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp\bin\Debug\netstandard2.0\ref\PushITapp.dll
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp\bin\Debug\netstandard2.0\PushITapp.pdb
-C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp\obj\Debug\netstandard2.0\PushITapp.csproj.AssemblyReference.cache
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp\obj\Debug\netstandard2.0\PushITapp.GeneratedMSBuildEditorConfig.editorconfig
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp\obj\Debug\netstandard2.0\AppShell.xaml.g.cs
@@ -17,3 +16,4 @@ C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITap
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp\obj\Debug\netstandard2.0\Views\StatisticsPage.xaml.g.cs
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp\obj\Debug\netstandard2.0\Views\BodyPage.xaml.g.cs
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp\obj\Debug\netstandard2.0\Views\StartPage.xaml.g.cs
+C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp\obj\Debug\netstandard2.0\PushITapp.csproj.AssemblyReference.cache

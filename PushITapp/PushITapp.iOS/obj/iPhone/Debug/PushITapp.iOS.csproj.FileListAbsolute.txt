@@ -83,3 +83,7 @@ C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITap
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp.iOS\bin\iPhone\Debug\DevExpress.XamarinForms.Charts.iOS.dll
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp.iOS\bin\iPhone\Debug\DevExpress.XamarinForms.Core.dll
 C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp.iOS\bin\iPhone\Debug\DevExpress.XamarinForms.Core.iOS.dll
+C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp.iOS\bin\iPhone\Debug\Lottie.iOS.dll
+C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp.iOS\bin\iPhone\Debug\Lottie.iOS.pdb
+C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp.iOS\bin\iPhone\Debug\Lottie.Forms.dll
+C:\Wojciechowski\-- MOJE --\Programowanie\PushITapp\PushITapp\PushITapp\PushITapp.iOS\bin\iPhone\Debug\Lottie.Forms.pdb
