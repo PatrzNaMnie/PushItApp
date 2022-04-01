@@ -29,4 +29,4 @@
 [User Manual](https://github.com/PatrzNaMnie/SimpleScada/blob/master/UserManual.md)
 #
 ## Licence
-[Licence](https://github.com/PatrzNaMnie/SimpleScada/blob/master/Licence.md)
+[Licence](https://github.com/PatrzNaMnie/PushItApp/blob/main/LICENSE)
