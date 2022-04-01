@@ -1,4 +1,4 @@
-![N|Solid](https://i.ibb.co/9tpTRxB/Simple-Scada.png)
+![N|Solid](https://i.postimg.cc/44vMSHZs/Push-It-App.png)
 # PushItApp
 ##### Version: Beta v0.1
 #
