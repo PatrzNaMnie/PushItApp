@@ -26,7 +26,7 @@
 
 #
 ## User Manual - EN
-[User Manual](https://github.com/PatrzNaMnie/SimpleScada/blob/master/UserManual.md)
+[User Manual](https://github.com/PatrzNaMnie/PushItApp/blob/main/User%20Manual.md)
 #
 ## Licence
 [Licence](https://github.com/PatrzNaMnie/PushItApp/blob/main/LICENSE)

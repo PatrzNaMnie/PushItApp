@@ -1,10 +1,11 @@
 
 
 # User Manual
-#
+# ****************
 ## Table of Contents
 
 - [Requirements](#requirements)
+- [Navigation panel](#navigation-panel)
 - [Push ups page](#push-ups-page)
   * [Day by day](#day-by-day)
   * [Proportional](#proportional)
@@ -14,44 +15,62 @@
   * [Statistics charts](#statistics-charts)
 
 
-#
+# ****************
 
 ## Requirements 
-##### Android version 5.0 or higher
+#### Android version 5.0 or higher
+#
+## Navigation panel
+#
+####  Push ups page
+![N|Solid](https://i.ibb.co/PGhjr0P/Screenshot-1648938222.png)
 
+####  Statistics page
+![N|Solid](https://i.ibb.co/KyLkr9D/Screenshot-2022-04-03-00-08-57-31-1aff83440c6c30da8b25c454b83c5af8.jpg)
 
 #
 ## Push ups page
 #
-- ### Day by day
+- ### Day by day mode
 #
+#### The day mode is easy to explain. You need to do exactly as many push-ups as indicated by the current day of the year. 
 
-![N|Solid](https://i.ibb.co/z2k93DX/1.png)
-![N|Solid](https://i.ibb.co/6X1cRkY/2.png)
+##### Example.
+##### 3th of March 2022 it's a 92 day of year, so you need to do 92 push-ups to complete daily task,
+#
+#
+#### The current day of the year
+![N|Solid](https://i.ibb.co/4ptpfM6/Day-By-Day1.png)
 
-##### •	 CpuType allows you to select the type of Siemens PLC you want to connect to.
-##### •	 IP Address is the address of PLC controller
-##### •	 Rack and Slot position you can get from PLC Hardware configuration
-##### After set correct IP Address, Rack and Slot user can establish Connection by pressing “Connection” button.  If all goes well, the Main screen will appear.
-#
-- ### Proportional
-#
-![N|Solid](https://i.ibb.co/9Tp8Gy9/3.png)
+#### Information of how many push-ups you need to do to be up to date in day by day monde
+![N|Solid](https://i.ibb.co/f1PVssp/Day-By-Day2.png)
 
-##### This screen is the first screen which we can see when we connect to SimpleScada.
 #
-##### 1 – Current data and time
-##### 2 – Current logged user
-##### 3 – Top bar alarm listopad
-##### 4 – Bottom select line (Home, Trend, Alarm, Alarm History, Login, Logout, Disconnect). Administration Panel is enable only to users with administration rights.
+- ### Proportional mode
+#
+#### Second mode it's a proportional. This value infroim you how many push ups you need to do every day to complete challnege. 
+
+#### In this specific example, you need to do 243 every day to December 31 this year.
+![N|Solid](https://i.ibb.co/7QH8Trt/Proportional1.png)
+
+#### Value of push-ups you need to do to complete daily proportional task.
+![N|Solid](https://i.ibb.co/58BqsDD/Proportional2.png)
+
 #
 - ### Add push ups
 #
-![N|Solid](https://i.ibb.co/ZHGTKjW/4.png)
-#
+#### Main circle in both modes has additional functionality. This is the input value field.
+#### To enter a value, tap the circle and the system numeric keypad will appear.
+![N|Solid](https://i.ibb.co/2PNz5Mt/Screenshot-1649022667.png)
 
-##### Home screen shows current status of devices working in this process, current measured values and the state of limit lams. Clicking on the selected device opens detailed window containing exact information about this device. 
-##### Process control section includes 4 different sub-processes, clicking on the selected process opens a detailed window with process control options.
+![N|Solid](https://i.ibb.co/42WXR81/Screenshot-1649022675.png)
+
+
+#### After entering the value will be automatically updated.
+![N|Solid](https://i.ibb.co/NjgttbF/Screenshot-1649022678.png)
+
+#### In both day-by-day and proportional modes there is a special button to switch between these modes
+![N|Solid](https://i.ibb.co/kQ2mxB1/Day-By-Day3.png)
 #
 
 #
@@ -59,14 +78,16 @@
 #
 - ### Historical values
 #
-![N|Solid](https://i.ibb.co/F6cKGnD/5.png)
-#
-
-##### Simple Scada can generate real-time graphs from collected data. User can choose measuring point from drop down list.
+#### A multi-touch chart that shows user historical pushup data
+![N|Solid](https://i.ibb.co/hmFN22t/Historical-Values.jpg)
 #
 - ### Statistics charts
 #
-![N|Solid](https://i.ibb.co/KDWVSwy/6.png)
+#### Donut charts of user acctual push-ups statistics. 
+![N|Solid](https://i.ibb.co/dDhBW5s/Acctual-Values.jpg)
 #
-
-##### Incoming alarm appears on special Alarm window and in Top Bar Alarm line. Is possible to see list of all incoming alarms by enter “Alarm” button from Bottom select line. In Alarm list user can see Data and Time the alarm was Received, name of incoming alarm variable, alarm value and alarm text. 
+#### By tapping on the chart area, you get detailed information about push-ups or days statistics
+![N|Solid](https://i.ibb.co/fC68tNK/Screenshot-2022-04-03-00-24-43-94-1aff83440c6c30da8b25c454b83c5af8.jpg)
+![N|Solid](https://i.ibb.co/GCkP71k/Screenshot-2022-04-03-00-24-48-02-1aff83440c6c30da8b25c454b83c5af8.jpg)
+![N|Solid](https://i.ibb.co/r4JdtKp/Screenshot-2022-04-03-00-24-51-50-1aff83440c6c30da8b25c454b83c5af8.jpg)
+![N|Solid]https://i.ibb.co/gwXtzy0/Screenshot-2022-04-03-00-24-54-55-1aff83440c6c30da8b25c454b83c5af8.jpg)
