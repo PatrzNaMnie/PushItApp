@@ -90,4 +90,4 @@
 ![N|Solid](https://i.ibb.co/fC68tNK/Screenshot-2022-04-03-00-24-43-94-1aff83440c6c30da8b25c454b83c5af8.jpg)
 ![N|Solid](https://i.ibb.co/GCkP71k/Screenshot-2022-04-03-00-24-48-02-1aff83440c6c30da8b25c454b83c5af8.jpg)
 ![N|Solid](https://i.ibb.co/r4JdtKp/Screenshot-2022-04-03-00-24-51-50-1aff83440c6c30da8b25c454b83c5af8.jpg)
-![N|Solid]https://i.ibb.co/gwXtzy0/Screenshot-2022-04-03-00-24-54-55-1aff83440c6c30da8b25c454b83c5af8.jpg)
+![N|Solid](https://i.ibb.co/gwXtzy0/Screenshot-2022-04-03-00-24-54-55-1aff83440c6c30da8b25c454b83c5af8.jpg)
