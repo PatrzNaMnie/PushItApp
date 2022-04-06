@@ -22,8 +22,10 @@ namespace PushITapp.Services
 
             for (int i = 0; i < calendar.GetDaysInYear(DateTime.Now.Year); i++)
             {
-
-                historicalValues.Insert(i, historicalUserValues.Where(p => p.Date.Date == everyDayInYear[i].Date).Sum(x => x.PushUps));
+                if(historicalUserValues.Where(p => p.Date.Date == everyDayInYear[i].Date).Sum(x => x.PushUps) > 0)
+                    historicalValues.Insert(i, historicalUserValues.Where(p => p.Date.Date == everyDayInYear[i].Date).Sum(x => x.PushUps));
+                else
+                    historicalValues.Insert(i, 0);
 
 
             }
